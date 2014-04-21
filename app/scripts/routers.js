@@ -8,6 +8,7 @@ App.Routers = App.Routers || {};
     App.Routers.ApplicationRouter = Backbone.Router.extend({
 
         routes: {
+            '': 'home',
             '!/case-projet/:projet(/)': 'projectHandler',
             '!/case-projet/:projet/Galerie(/)': 'caseStudyHandler',
             '!/case-projet(/)': 'homeEvents',
@@ -21,6 +22,9 @@ App.Routers = App.Routers || {};
         homeEvents: function (e) {
             this.loadView(e),
             $('html,body').animate({scrollTop: $('.line[data-id="events"]').offset().top}, 2000, 'easeInOutQuint');
+        },
+        home: function (e) {
+            this.loadView(e)
         },
         loadView: function (e) {
             switch (e) {

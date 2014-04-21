@@ -10,6 +10,7 @@ App.Views = App.Views || {};
 	    caseStudyContainer: $('#homepage'),
 	    initialize: function () {
 	    	var e = this;
+            $('#homepage').css('display', 'block'),
 	        this.goToByScroll(),
 	        this.Skrollr(),
 	        $("#Incentive a.OpenProject").on("click", function (t) {

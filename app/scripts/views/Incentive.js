@@ -50,10 +50,10 @@ App.Views = App.Views || {};
 		    }, 1e3);
 	    },
 	    enterFromRouter: function () {
-            $('#homepage').css('display', 'none'), this.enterProject();
+            $('#homepage').addClass('noactive'), this.enterProject();
         },
         enterGalleryFromRouter: function () {
-            $('#homepage').css('display', 'none'), this.enterGalerie();
+            $('#homepage').addClass('noactive')
         },
 
     });

@@ -27,12 +27,14 @@ window.App = {
     },
     iosSlider: function (e) {
         'use strict';
+
         function sliderResize() {
             var setHeight = $('.eventSlider .item:eq(0) img').outerHeight(true);
             $(e).css({
                 height: setHeight
             });
         }
+        
         function sliderResizeGallery() {
             var setWidth = $('.gallery').outerWidth();
             $(e).css({

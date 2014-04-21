@@ -417,8 +417,7 @@ footer[id=footer] {
 	z-index: 5;
 	text-align: left;
 
-	section[data-projet-page=Incentive], section[data-projet-page=Corporate]
-	, section[data-projet-page=Seminaire], section[data-projet-page=Convention] {display: none;}
+	#projet-page section[data-projet-page]{display: none;}
 
 	section.gallery {
 		position: absolute;
@@ -465,7 +464,7 @@ footer[id=footer] {
 					}
 				}
 
-				.item1, .item2, .item3, .item4, .item5 {background-size: cover; background-repeat: no-repeat;}
+				.item1, .item2, .item3, .item4, .item5 {background-size: cover; background-repeat: no-repeat; background-position: center center;}
 			}
 		}
 	}
