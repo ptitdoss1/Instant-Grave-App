@@ -1,0 +1,742 @@
+@import "knacss";
+@import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
+@import "icons/*.png";
+@import "icons-2x/*.png";
+@include all-icons-sprites;
+
+/* ----------------------------- */
+/* VARIABLEE
+/* ----------------------------- */
+
+$mediumvalue : 20px;
+$basebg : #FFF;
+$sprites: sprite-map("icons/*.png");
+$sprites2x: sprite-map("icons-2x/*.png");
+
+a {
+	cursor: pointer;
+}
+
+a.button {
+		border: 1px #FFF solid;
+		background: transparent;
+		padding: $mediumvalue/2 $mediumvalue;
+		font-size: 16px;
+		color: $basebg;
+		text-decoration: none;
+		text-transform: uppercase;
+		@include transition (all 0.3s ease);
+		display: inline-block;
+	}
+
+a.button:hover {
+	border-color: $basebg;
+	background-color: $basebg;
+	color: black;
+	@include transition (all 0.3s ease);
+}
+
+.strong {font-weight:bold;}
+
+[class^="icons-"], 
+[class*=" icons-"] { 
+  background-repeat: no-repeat;
+  display: inline-block;
+  background-image: sprite-url($sprites);
+
+  @media (-webkit-min-device-pixel-ratio: 1.5), 
+		 (-o-min-device-pixel-ratio: 3/2), 
+		 (min-device-pixel-ratio: 1.5) {
+	background-image: sprite-url($sprites2x);
+	background-size: ceil(image-width(sprite-path($sprites2x)) / 2) auto;
+  }
+}
+
+/* ----------------------------- */
+/* ==own stylesheet              */
+/* ----------------------------- */
+
+div[id=global] {
+
+	text-align: center;
+
+	p {
+		font-weight: 100;
+	}
+}
+
+.valign {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	margin: 0 auto;
+}
+
+.valign-text {
+	display: table-cell;
+		text-align: center;
+		vertical-align: middle;
+}
+
+.next, .prev {
+	position: absolute;
+	top: 0;
+	width: 10%;
+	height: 100%;
+	background: transparent;
+}
+
+.prev {left: 0; cursor: w-resize !important;}
+.next {right: 0; cursor: e-resize !important;}
+
+/* ----------------------------- */
+/* == HEADER		             */
+/* ----------------------------- */
+
+header[id=header] {
+	background: url('../images/miami-beach-instantgrave.jpg') no-repeat center center fixed;
+  	background-size: cover;
+	position: relative;
+	color: $basebg;
+
+	h1 {
+		font-size: 60px;
+		line-height: 65px;
+		width: 70%;
+		padding-bottom: $mediumvalue*4;
+	}
+
+	a.arrow-bottom {
+		margin-top: $mediumvalue*3;
+		display: table;
+
+		img[class=arrow-bottom-img] {
+			width: 50px;
+			position: relative;
+			@include animation(translate 0.75s ease-in-out infinite);
+		}
+	}
+
+	a.arrow-bottom:hover {
+		img[class=arrow-bottom-img] {
+			@include animation-play-state(paused);
+		}
+	}
+}
+
+@include keyframes(translate) {
+  0% {
+    @include transform(translateY(0px));
+  }
+  50% {
+    @include transform(translateY(5px));
+  }
+}
+
+
+nav[id=navigation] {
+	padding: $mediumvalue;
+	width: 100%;
+	text-align: left;
+	background-color:#141414;
+	position: relative;
+
+	.logo {
+		text-align: center;
+		cursor: pointer;
+	}
+}
+
+section[id=vision] {
+	h1 {
+		font-size: 45px;
+		text-transform: none;
+		line-height: 50px;
+	}
+
+	p {font-size: 22px}
+}
+
+section[id=events] {
+
+	@include user-select(none);
+
+	.eventSlider {
+		position: relative;
+		top: 0;
+		left: 0;
+		overflow: hidden;
+		background-color:black;
+		width: 100%;
+		height: auto;
+
+		.slider {
+			width: 100%;
+			height: auto;
+
+			.item {
+				float:left;
+				max-width: 1140px;
+				width: 100%;
+
+				.intro {
+					width: 100%;
+					height: 100%;
+					background-color: #000;
+					color: $basebg;
+					z-index: 999;
+					opacity: 0.8;
+					position: absolute;
+
+					p {margin-top: 0;margin-bottom: 25%;}
+				}
+
+				img {
+					position: relative;
+					top: 0;
+					left: 0;
+					max-width: 1140px;
+					width: 100%;
+					margin: 0 auto;
+					height: auto;
+				}
+			}
+		}
+	}
+}
+
+section[id=services] {
+	h1 {
+		margin-bottom: 2em;
+	}
+	.grid > * {margin-left:0;}
+	div.zone {
+
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		text-align: left;
+		padding-left: 7%;
+		padding-right: 3%;
+		margin-bottom: 5%;
+
+		h3 {
+			font-weight: 100;
+			font-size: 18px;
+			text-transform: none;
+			margin-top: 0;
+			line-height:2;
+		}
+	}
+	div.zone:before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 70px;
+		height: 100px;
+		background: transparent url(https://d3ptyyxy2at9ui.cloudfront.net/85ce95838acfcf16223fc60c1251c1b6.png) 0 3px no-repeat;
+	}
+
+	div.zone.icon-visuel:before, div.zone.icon-challenge:before, div.zone.icon-event:before,
+	div.zone.icon-conv:before, div.zone.icon-stand:before, div.zone.icon-light:before {width: 45px;}
+
+	div.zone.icon-visuel:before {
+		background: transparent url('../images/icon_5968.svg') 0 3px no-repeat;
+	}
+
+	div.zone.icon-challenge:before {
+		background: transparent url('../images/icon_14893.svg') 0 3px no-repeat;
+	}
+
+	div.zone.icon-event:before {
+		background: transparent url('../images/icon_1194.svg') 0 3px no-repeat;
+	}
+
+	div.zone.icon-conv:before {
+		background: transparent url('../images/icon_18704.svg') 0 3px no-repeat;
+	}
+
+	div.zone.icon-stand:before {
+		background: transparent url('../images/icon_29508.svg') 0 3px no-repeat;
+	}
+
+	div.zone.icon-light:before {
+		background: transparent url('../images/icon_15445.svg') 0 3px no-repeat;
+	}
+}
+
+section[id=contact] {
+	text-align: center;
+	background: url('../images/soiree-instant-grave.jpg') no-repeat center center fixed;
+  	background-size: cover;
+	color: $basebg;
+
+	a[class=button] {margin-top: $mediumvalue*2; display: inline-block}
+
+	a[class=button]:hover {color: #2c3e50;}
+}
+
+section[id=clients] {
+
+	h1 {
+		margin-bottom: 2em;
+	}
+	background-color: $basebg;
+
+	div {min-height: 28px; display: inline-block; vertical-align: middle; margin: 0px 20px;}
+
+	div.icons-etam {
+		@include sprite-background(etam);
+	}
+	div.icons-laurent {
+		@include sprite-background(laurent);
+	}
+	div.icons-belfor {
+		@include sprite-background(belfor);
+	}
+	div.icons-verisure {
+		@include sprite-background(verisure);
+	}
+	div.icons-stetienne {
+		@include sprite-background(stetienne);
+	}
+}
+
+section[id=clients].pa3 {padding: 40px;}
+
+section[id=newsletter] {
+	text-align: center;
+	background-color:#3498db; 
+
+	label {
+		font-size: 18px;
+		font-weight: 100;
+		display: block;
+		color: $basebg;
+		margin-bottom: 2em;
+		cursor: text;
+	}
+
+	input[type=email], button {
+		height: 55px;
+		border:none;
+		border:1px solid #FFF;
+	}
+
+	input[type=email] {
+		width: 350px;
+		padding: $mediumvalue/2 $mediumvalue;		
+	}
+
+	button {
+		width: 150px;
+		text-transform: uppercase;
+		background: transparent;
+		color: $basebg;
+		@include transition (all 0.3s ease);
+	}
+
+	button:hover {
+		background: #FFF;
+		color:#34495e;
+		@include transition (all 0.3s ease);
+	}
+}
+
+footer[id=footer] {
+	background-color:#141414;
+	width: 100%;
+	color: white;
+	padding-bottom: $mediumvalue;
+	position: relative;
+	.button-link { cursor: pointer;}
+
+	#meta {
+		margin-top: $mediumvalue*3;
+		border-top: 1px solid #333;
+		padding-top: 36px;
+		font-family: Arial,sans-serif;
+		font-size: 11px;
+		height: 64px;
+
+		> a {
+			float: right;
+			color: #999;
+			text-align: right;
+			margin-left: 40px;
+			text-decoration: none;
+		}
+
+		a {@include transition (all 0.3s ease);}
+		a:hover {color: #FFF;}
+
+		span {
+			float: left;
+			color: #999;
+		}
+	}
+	
+}
+
+.animateProjet {
+	width: 100%;
+	height: 100%;
+	background-color: #FFF;
+	display: none;
+	position: absolute;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin-left: 0;
+	@include transition (all 1s);
+	overflow:hidden;
+}
+
+.animateProjet.open {
+	margin-left: 100%;
+}
+
+/* ----------------------------- */
+/* == DATA PROJET	             */
+/* ----------------------------- */
+
+//#homepage {display: none}
+
+#projet-page {
+	display: block;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	z-index: 5;
+	text-align: left;
+
+	section[data-projet-page=Incentive], section[data-projet-page=Corporate]
+	, section[data-projet-page=Seminaire], section[data-projet-page=Convention] {display: none;}
+
+	section.gallery {
+		position: absolute;
+		height: 100%;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background-color: black;
+		@include transition(all 1s);
+
+		div.content {
+			position: absolute;
+			z-index: 9999;
+			padding: $mediumvalue*3;
+			width: 100%;
+
+			h1 {color:#FFF;line-height:1.2em; font-size:4.5em;margin-bottom:$mediumvalue;}
+
+			nav.next-projet {
+				position: absolute;
+				bottom:$mediumvalue;
+				right:$mediumvalue;
+				a{text-decoration: none; color:white; font-size:11px;}
+				a:hover {color:black;}
+			}
+		}
+		.GalerieSlider {
+			width: 100%;
+			height: 100% !important;
+
+			.slider {
+				width: 100%;
+				height: 100%;
+
+				.item {
+					float: left;
+					width: 100%;
+					height: 100%;
+
+					img {
+						width: 100%;
+						height: auto;
+					}
+				}
+
+				.item1, .item2, .item3, .item4, .item5 {background-size: cover; background-repeat: no-repeat;}
+			}
+		}
+	}
+
+	section[data-projet-page=Incentive] .item1 {background: transparent url('../images/projet/1/amb5.jpg')}
+	section[data-projet-page=Incentive] .item2 {background: transparent url('../images/projet/1/amb2.jpg')}
+	section[data-projet-page=Incentive] .item3 {background: transparent url('../images/projet/1/amb3.jpg')}
+	section[data-projet-page=Incentive] .item4 {background: transparent url('../images/projet/1/amb4.jpg')}
+	section[data-projet-page=Incentive] .item5 {background: transparent url('../images/projet/1/amb1.jpg')}
+
+	section.text {
+		padding: $mediumvalue*3;
+		background-color:white;
+		margin-left: 45%;
+		position: relative;
+		font-size: 20px !important;
+		@include transition(all 1s);
+
+		h2 {
+			font-size: 45px;
+			line-height: 52px;
+			display: inline-block;
+			margin-bottom:$mediumvalue*2;
+		}
+
+		nav.back {
+			display: inline-block;
+			position: absolute;
+			right: 0;
+			margin-right: $mediumvalue*3;
+			margin-top: $mediumvalue/2;
+			a.button {border: 1px #000 solid;}
+			a {text-decoration: none; color:black; font-size:11px;}
+			a:hover {color:white; background-color:#000;}
+		}
+	}
+
+	.open {
+		width: 45%;
+	}
+	.close {
+		width: 0%;
+	}
+	.close1 {
+		width: 100% !important;
+	}
+}
+
+/* ----------------------------- */
+/* == LOADING 	            	 */
+/* ----------------------------- */
+
+#loader {
+	position:fixed;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	z-index:1999;
+	background:#141414;
+	text-align:center;
+	color:white;
+
+	 div > img {
+	 	margin-top: 25%; 
+	 }
+
+	 p { font-size:12px}
+}
+
+.pace {
+	-webkit-pointer-events: none;
+	pointer-events: none;
+	@include user-select(none);
+}
+
+.pace-inactive {
+ 	display: none;
+}
+
+.pace .pace-progress {
+	background: #3498db;
+	position: fixed;
+	z-index: 2000;
+	top: 0;
+	left: 0;
+	height: 2px;
+	@include transition(width 1s);
+}
+
+.pace .pace-progress-inner {
+	display: block;
+	position: absolute;
+	right: 0px;
+	width: 100px;
+	height: 100%;
+	box-shadow: 0 0 10px #3498db, 0 0 5px #3498db;
+	opacity: 1.0;
+	@include transform(rotate(3deg) translateY(-4px));
+}
+
+.pace .pace-activity {
+	display: block;
+	position: fixed;
+	z-index: 2000;
+	top: 15px;
+	right: 15px;
+	width: 14px;
+	height: 14px;
+	border: solid 2px transparent;
+	border-top-color: #29d;
+	border-left-color: #29d;
+	border-radius: 10px;
+	@include animation(pace-spinner 400ms linear infinite);
+}
+
+@include keyframes(pace-spinner) {
+	from {
+		@include transform(rotate(0deg));
+	}
+	to {
+		@include transform(rotate(360deg));
+	}
+}
+
+/* ----------------------------- */
+/* == RESPONSIVE	             */
+/* ----------------------------- */
+
+@include mq(small) {
+
+	.pa4, .pa3 {padding: 60px};
+
+	nav[id=navigation] {
+		.grid3 > * {width: 33.333% !important;}
+	}
+		
+
+	header[id=header] {
+		h1 {font-size:60px;width: 100%;}
+		h2 {font-size:25px;width: 100%;}
+	}
+
+	section[id=vision] {
+		h1 {font-size: 30px; line-height:40px}
+		p {font-size: 18px;}
+	}
+
+	section[id=services] {
+		div.zone {
+			padding-left: 9%;
+			padding-right: 5%;
+			margin-bottom: 5%;
+		}
+	}
+
+	section[id=clients] {
+		div {margin: 0 $mediumvalue;}
+	}
+
+	section[id=newsletter] {
+		label {font-size: 16px}
+	}
+
+	section[id=social] {
+		blockquote#tweet {font-size: 16px}
+	}
+
+	#projet-page {
+		section[id=gallery] {
+			position: relative;
+			width: 100% !important;
+			height: auto !important;
+		}
+
+		section[class=text] {
+			margin-left: 0;
+			width: 100%;
+			display: block;
+		}
+	}
+
+
+}
+
+@include mq(tiny) {
+
+	.pa4, .pa3 {padding: $mediumvalue};
+
+	section[id=services] div.zone.icon-visuel:before, section[id=services] div.zone.icon-challenge:before, 
+	section[id=services] div.zone.icon-event:before, section[id=services] div.zone.icon-conv:before, 
+	section[id=services] div.zone.icon-stand:before, section[id=services] div.zone.icon-light:before { width:35px;}
+
+	section[id=services] {
+		h1 {margin-bottom: 1em;}
+		div.zone {padding-left: 50px;padding-right: 0%;}
+	}
+
+	section[id=vision] {
+		h1 {font-size: 26px; line-height:30px}
+		p {font-size: 14px;}
+	}
+
+	section[id=clients] {
+		div {margin: $mediumvalue/2 $mediumvalue}
+	}
+
+	section[id=newsletter] {
+		label {font-size: 15px}
+
+		input[type=email], button {
+			width: 100%;
+		}
+
+		button {
+			margin-top: $mediumvalue/2
+		}
+	}
+
+	section[id=social] {
+		blockquote#tweet {font-size: 14px}
+	}
+
+	section[id=contact] {
+		a[class=button] {
+			width: 100%;
+		}
+	}
+
+}
+
+@media (max-width: 480px) {
+
+	nav[id=navigation] .grid3 > * {width:100% !important;}
+
+	h1 { font-size: 2.5em;}
+
+	header[id=header] {
+		h1 {font-size: 37px;line-height: 47px;}
+		h2 {font-size: 20px;padding: 2% 0 15% 0;}
+		a.arrow-bottom {margin-top: 45px;}
+	}
+
+	.lang { display: none}
+
+
+	section[id=vision] h1 {font-size: 23px;}
+	section[id=clients] {
+		div {
+			margin: 10px 0px;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	#projet-page {
+		section[id=gallery] {
+			height: 350px;
+
+			h1 { line-height:60px; font-size:50px;}
+		}
+	}
+
+}
+
+@media (max-width: 360px) {
+	header[id=header] {
+		h1 {font-size: 25px;line-height: 30px;padding-bottom: 45px;}
+		h2 {display:none;}
+	}	
+
+	footer[id=footer] {.logo { display: none} .back {position: relative; text-align: center; right:0; top:0;}}
+}
