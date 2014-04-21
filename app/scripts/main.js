@@ -11,7 +11,7 @@ window.App = {
         'use strict';
         this.router = new this.Routers.ApplicationRouter(),
         this.homeView = new this.Views.HomeView,
-        Backbone.history.start();
+        Backbone.history.start({});
     },
     loadView: function (e) {
         return this.activeProjectView = e, this
