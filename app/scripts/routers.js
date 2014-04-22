@@ -9,14 +9,14 @@ App.Routers = App.Routers || {};
 
         routes: {
             '': 'home',
-            '!/case-projet/:projet(/)': 'projectHandler',
-            '!/case-projet/:projet/Galerie(/)': 'caseStudyHandler',
+            '!/case-projet/:projet(/)': 'projetService',
+            '!/case-projet/:projet/Galerie(/)': 'galerieService',
             '!/case-projet(/)': 'homeEvents',
         },
-        projectHandler: function (e) {
+        projetService: function (e) {
             this.loadView(e), App.activeProjectView.enterFromRouter();
         },
-        caseStudyHandler: function (e) {
+        galerieService: function (e) {
             this.loadView(e), App.activeProjectView.enterGalleryFromRouter();
         },
         homeEvents: function (e) {

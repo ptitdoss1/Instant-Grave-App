@@ -11,6 +11,7 @@ App.Views = App.Views || {};
 	    initialize: function () {
 	    	var e = this;
             $('#homepage').css('display', 'block'),
+            $('section[data-projet-page]').css('display', 'none'),
 	        this.goToByScroll(),
 	        this.Skrollr(),
 	        $("#Incentive a.OpenProject").on("click", function (t) {
@@ -47,16 +48,16 @@ App.Views = App.Views || {};
         enterProjectEvent: function (e) {
             switch (e) {
             case 'Incentive':
-                App.loadView(new App.Views.Incentive().enterProjectAnim());
+                App.loadView(new App.Views.Incentive().enterProjectClick());
                 break;
             case 'Corporate':
-                App.loadView(new App.Views.Corporate().enterProjectAnim());
+                App.loadView(new App.Views.Corporate().enterProjectClick());
                 break;
             case 'Convention':
-                App.loadView(new App.Views.Convention().enterProjectAnim());
+                App.loadView(new App.Views.Convention().enterProjectClick());
                 break;
             case 'Seminaire':
-                App.loadView(new App.Views.Seminaire().enterProjectAnim());
+                App.loadView(new App.Views.Seminaire().enterProjectClick());
                 break;
             default:
                 App.loadView(null);
