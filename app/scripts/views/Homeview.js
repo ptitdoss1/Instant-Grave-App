@@ -4,7 +4,7 @@ App.Views = App.Views || {};
 
 (function () {
     'use strict';
-    App.Views.HomeView = Backbone.View.extend({
+    App.Views.Homeview = Backbone.View.extend({
 
 	    el: $('#homepage'),
 	    caseStudyContainer: $('#homepage'),

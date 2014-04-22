@@ -24,7 +24,7 @@ App.Routers = App.Routers || {};
             $('html,body').animate({scrollTop: $('.line[data-id="events"]').offset().top}, 2000, 'easeInOutQuint');
         },
         home: function (e) {
-            this.loadView(e)
+            new App.Views.Homeview()
         },
         loadView: function (e) {
             switch (e) {
