@@ -11,6 +11,8 @@ App.Views = App.Views || {};
 	    initialize: function () {
 	    	var e = this;
             $('#homepage').css('display', 'block'),
+            $('body').css('overflow', 'auto'),
+            $('.animateProjet').css('display', 'none'),
             $('section[data-projet-page]').css('display', 'none'),
 	        this.goToByScroll(),
 	        this.Skrollr(),
@@ -29,19 +31,17 @@ App.Views = App.Views || {};
 	    },
 	    goToByScroll: function(){
 	        'use strict';
-	        $('.button-link').click(function (e) {
+	        $('.button-link').click(function () {
 	            var dataslide = $(this).attr('data-id');
 	            $('html,body').animate({
 	                scrollTop: $('.line[data-id="' + dataslide + '"]').offset().top
-	            }, 2000, 'easeInOutQuint');
+	            }, 1500, 'easeInOutQuint');
+                return false;
 	        });
 	    },
-	    Skrollr: function (e) {
+	    Skrollr: function () {
 	        'use strict';
 	        skrollr.init({
-	      		// render: function(data) {
-			    //     console.log(data.curTop);
-			    // },
 	            forceHeight: false
 	        });
 	    },

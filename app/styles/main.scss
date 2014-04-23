@@ -419,6 +419,10 @@ footer[id=footer] {
 
 	section[data-projet-page]{display: none;}
 
+	nav.back {
+		position: absolute;
+	}
+
 	section.gallery {
 		position: absolute;
 		height: 100%;
@@ -429,11 +433,23 @@ footer[id=footer] {
 		background-color: black;
 		@include transition(all 1s);
 
+		
+
 		div.content {
 			position: absolute;
-			z-index: 9999;
+			z-index: 9;
 			padding: $mediumvalue*3;
 			width: 100%;
+
+			nav.back {
+				right:$mediumvalue*3;
+				top:$mediumvalue*3;
+				a.button {border: 1px #FFF solid;}
+				a {text-decoration: none; color:white; font-size:11px;}
+				a:hover {color:black; background-color:#FFF;}
+				z-index: 10;
+				display: none;
+			}
 
 			h1 {color:#FFF;line-height:1.2em; font-size:4.5em;margin-bottom:$mediumvalue;}
 
@@ -492,7 +508,6 @@ footer[id=footer] {
 
 		nav.back {
 			display: inline-block;
-			position: absolute;
 			right: 0;
 			margin-right: $mediumvalue*3;
 			margin-top: $mediumvalue/2;

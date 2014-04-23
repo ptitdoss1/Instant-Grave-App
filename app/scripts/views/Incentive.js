@@ -13,6 +13,7 @@ App.Views = App.Views || {};
 	    	"use strict";
 	        // $('#Incentive a.OpenProject').on('click', this.enterProject),
 	        $('section[data-projet-page="Incentive"] a.OpenGalerie').on('click', this.enterGalerieClick);
+	        $('body').css('overflow', 'hidden');
 	    },
 	    enterProjectClick: function () {
 	        Backbone.history.navigate("!/case-projet/Incentive"),
@@ -31,6 +32,7 @@ App.Views = App.Views || {};
             $('section[data-projet-page="Incentive"] .gallery').addClass('close');
             $('section[data-projet-page="Incentive"] .GalerieSlider').addClass('close1');
             $('section[data-projet-page="Incentive"] .text').css('display', 'none');
+            $('section[data-projet-page="Incentive"] .content .back').css('display', 'block');
             setTimeout(function () {
             	$('.animateProjet').css('display', 'block');
             	$('section.gallery').css('width', '100%').one('transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', 
@@ -58,6 +60,7 @@ App.Views = App.Views || {};
             $('section[data-projet-page="Incentive"]').css('display', 'block'),
             $('section[data-projet-page="Incentive"] .text').css('display', 'none'),
             $('section[data-projet-page="Incentive"] a.OpenGalerie').css('display', 'none'),
+            $('section[data-projet-page="Incentive"] .content .back').css('display', 'block'),
             $('section.gallery').css('width', '100%'),
             $('.GalerieSlider').iosSlider('update');
         },
