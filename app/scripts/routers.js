@@ -23,8 +23,8 @@ App.Routers = App.Routers || {};
             this.loadView(e),
             $('html,body').animate({scrollTop: $('.line[data-id="events"]').offset().top}, 2000, 'easeInOutQuint');
         },
-        home: function (e) {
-            new App.Views.Homeview()
+        home: function () {
+            new App.Views.Homeview();
         },
         loadView: function (e) {
             switch (e) {

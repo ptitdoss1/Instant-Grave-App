@@ -10,11 +10,12 @@ window.App = {
     init: function () {
         'use strict';
         this.router = new this.Routers.ApplicationRouter(),
-        this.homeView = new this.Views.Homeview,
+        this.homeView = new this.Views.Homeview(),
         Backbone.history.start();
     },
     loadView: function (e) {
-        return this.activeProjectView = e, this
+        'use strict';
+        return this.activeProjectView = e, this;
     },
     windowResized: function(){
         'use strict';
@@ -49,7 +50,7 @@ window.App = {
             sliderResizeGallery();
         }
 
-        if ('.eventSlider' == e) {
+        if ('.eventSlider' === e) {
             $(e).iosSlider({
                 snapToChildren: true,
                 desktopClickDrag: true,
@@ -62,7 +63,7 @@ window.App = {
                 navPrevSelector: $('.eventSlider .prev')
             });
         }
-        else if ('.GalerieSlider' == e) {
+        else if ('.GalerieSlider' === e) {
             $(e).iosSlider({
                 snapToChildren: true,
                 desktopClickDrag: true,
@@ -74,13 +75,13 @@ window.App = {
                 navNextSelector: $('.GalerieSlider .next'),
                 navPrevSelector: $('.GalerieSlider .prev')
             });
-        }  
-        
+        }
     }
 }, $(window).load(function () {
+    'use strict';
     setTimeout(function () {
-        $("#loader").fadeOut(1e3), App.init(), $(document).scrollTop(0)
-    }, 500)
+        $('#loader').fadeOut(1e3), App.init(), $(document).scrollTop(0)
+    }, 500);
 });
 
 $(document).ready(function () {

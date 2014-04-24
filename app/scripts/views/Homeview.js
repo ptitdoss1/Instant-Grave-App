@@ -9,28 +9,27 @@ App.Views = App.Views || {};
 	    el: $('#homepage'),
 	    caseStudyContainer: $('#homepage'),
 	    initialize: function () {
-	    	var e = this;
+            var e = this;
             $('#homepage').css('display', 'block'),
             $('body').css('overflow', 'auto'),
             $('.animateProjet').css('display', 'none'),
             $('section[data-projet-page]').css('display', 'none'),
 	        this.goToByScroll(),
 	        this.Skrollr(),
-	        $("#Incentive a.OpenProject").on("click", function (t) {
+	        $('#Incentive a.OpenProject').on('click', function () {
                 e.enterProjectEvent('Incentive')
             }),
-            $("#Corporate a.OpenProject").on("click", function (t) {
+            $('#Corporate a.OpenProject').on('click', function () {
                 e.enterProjectEvent('Corporate')
             }),
-            $("#Convention a.OpenProject").on("click", function (t) {
+            $('#Convention a.OpenProject').on('click', function () {
                 e.enterProjectEvent('Convention')
             }),
-            $("#Seminaire a.OpenProject").on("click", function (t) {
+            $('#Seminaire a.OpenProject').on('click', function () {
                 e.enterProjectEvent('Seminaire')
             });
 	    },
 	    goToByScroll: function(){
-	        'use strict';
 	        $('.button-link').click(function () {
 	            var dataslide = $(this).attr('data-id');
 	            $('html,body').animate({
@@ -40,7 +39,6 @@ App.Views = App.Views || {};
 	        });
 	    },
 	    Skrollr: function () {
-	        'use strict';
 	        skrollr.init({
 	            forceHeight: false
 	        });
