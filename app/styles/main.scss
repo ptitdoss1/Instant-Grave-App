@@ -431,14 +431,12 @@ footer[id=footer] {
 		left: 0;
 		right: 0;
 		background-color: black;
-		@include transition(all 1s);
-
-		
+		width: 45%;
 
 		div.content {
 			position: absolute;
 			z-index: 9;
-			padding: $mediumvalue*3;
+			padding-left: $mediumvalue*2;
 			width: 100%;
 
 			nav.back {
@@ -497,7 +495,7 @@ footer[id=footer] {
 		margin-left: 45%;
 		position: relative;
 		font-size: 20px !important;
-		@include transition(all 1s);
+		// @include transition(all 1s);
 
 		h2 {
 			font-size: 45px;
@@ -517,15 +515,6 @@ footer[id=footer] {
 		}
 	}
 
-	.open {
-		width: 45%;
-	}
-	.close {
-		width: 0%;
-	}
-	.close1 {
-		width: 100% !important;
-	}
 }
 
 /* ----------------------------- */
