@@ -363,20 +363,24 @@ footer[id=footer] {
 		font-size: 11px;
 		height: 64px;
 
-		> a {
+		> div {
 			float: right;
-			color: #999;
-			text-align: right;
-			margin-left: 40px;
-			text-decoration: none;
+
+			a {
+				float: right;
+				color: #999;
+				margin-left: 40px;
+				text-decoration: none;
+			}
+
+			a {@include transition (all 0.3s ease);}
+			a:hover {color: #FFF;}
 		}
 
-		a {@include transition (all 0.3s ease);}
-		a:hover {color: #FFF;}
-
-		span {
-			float: left;
+		> span {
 			color: #999;
+			text-align: left;
+			float: left;
 		}
 	}
 	
@@ -507,11 +511,11 @@ footer[id=footer] {
 	section[data-projet-page=Corporate] .item4 {background: transparent url('../images/projet/2/amb4.jpg')}
 	section[data-projet-page=Corporate] .item5 {background: transparent url('../images/projet/2/amb1.jpg')}
 
-	section[data-projet-page=Seminaire] .item1 {background: transparent url('../images/projet/4/amb5.jpg')}
-	section[data-projet-page=Seminaire] .item2 {background: transparent url('../images/projet/4/amb2.jpg')}
-	section[data-projet-page=Seminaire] .item3 {background: transparent url('../images/projet/4/amb3.jpg')}
-	section[data-projet-page=Seminaire] .item4 {background: transparent url('../images/projet/4/amb4.jpg')}
-	section[data-projet-page=Seminaire] .item5 {background: transparent url('../images/projet/4/amb1.jpg')}
+	section[data-projet-page=Studio] .item1 {background: transparent url('../images/projet/4/amb5.jpg')}
+	section[data-projet-page=Studio] .item2 {background: transparent url('../images/projet/4/amb2.jpg')}
+	section[data-projet-page=Studio] .item3 {background: transparent url('../images/projet/4/amb3.jpg')}
+	section[data-projet-page=Studio] .item4 {background: transparent url('../images/projet/4/amb4.jpg')}
+	section[data-projet-page=Studio] .item5 {background: transparent url('../images/projet/4/amb1.jpg')}
 
 }
 

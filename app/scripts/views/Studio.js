@@ -4,10 +4,10 @@ App.Views = App.Views || {};
 
 (function () {
     'use strict';
-    App.Views.Seminaire = Backbone.View.extend({
+    App.Views.Studio = Backbone.View.extend({
 
         el: $('#projet-page'),
-	    name: 'Seminaire',
+	    name: 'Studio',
 	    initialize: function () {
             $('section[data-projet-page="' + this.name + '"] a.OpenGalerie').on('click', _.bind(this.enterGalerieClick, this));
             $('body').css('overflow', 'hidden');
