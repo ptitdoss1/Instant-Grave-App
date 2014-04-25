@@ -7,45 +7,43 @@ App.Views = App.Views || {};
     App.Views.Convention = Backbone.View.extend({
 
         el: $('#projet-page'),
-	    caseStudyContainer: $('#projet-page'),
-	    name: "Convention",
+	    name: 'Convention',
 	    initialize: function () {
-	        // $('#Convention a.OpenProject').on('click', this.enterProject),
-	        // $('section[data-projet-page="Convention"] a.OpenGalerie').on('click', this.enterGalerie);
-	    },
-	    enterProjectAnim: function () {
-	    	Backbone.history.navigate("!/case-projet/Inventive"),
-	        $('#homepage').css('display', 'none'),
-	        $('section[data-projet-page="Convention"]').css('display', 'block'),
-	        $('.GalerieSlider').iosSlider('update'),
-	        $('.GalerieSlider').iosSlider('lock');
-	    },
-	    enterProject: function () {
-	        Backbone.history.navigate("!/case-projet/" + this.name),
-	        $('#homepage').css('display', 'none'),
-	        $('section[data-projet-page="Convention"]').css('display', 'block'),
-	        $('.GalerieSlider').iosSlider('update'),
-	        $('.GalerieSlider').iosSlider('lock');
-	    },
-	    enterGalerie: function () {
-	        Backbone.history.navigate("!/case-projet/" + name + "/Galerie", {trigger: true}),
-	        $('section[data-projet-page="Convention"] a.OpenGalerie').css('display', 'none'),
-	        $('div.content').css('width', '100%'),
-	        $('section.text').css('display', 'none'),
-	        $('.GalerieSlider').iosSlider('update');
-	    },
-	    enterFromRouter: function () {
-	    	Backbone.history.navigate("!/case-projet/Inventive"),
+            $('section[data-projet-page="' + this.name + '"] a.OpenGalerie').on('click', _.bind(this.enterGalerieClick, this));
+            $('body').css('overflow', 'hidden');
+        },
+        enterProjectClick: function () {
+            Backbone.history.navigate('!/case-projet/'+ this.name),
             $('#homepage').css('display', 'none'),
-            $('section[data-projet-page="Convention"]').css('display', 'block'),
-            $('.GalerieSlider').iosSlider('update'),
-	        $('.GalerieSlider').iosSlider('lock');
+            $('section[data-projet-page="' + this.name + '"]').css('display', 'block'),
+            $('section[data-projet-page="' + this.name + '"] .GalerieSlider').iosSlider('update');
+        },
+        enterGalerieClick: function () {
+            Backbone.history.navigate('!/case-projet/' + this.name + '/Galerie'),
+            $('section[data-projet-page="' + this.name + '"] .text').css('display', 'none'),
+            $('section[data-projet-page="' + this.name + '"] a.OpenGalerie').css('display', 'none'),
+            $('section[data-projet-page="' + this.name + '"] .content .gallery-back').css('display', 'block'),
+            $('section[data-projet-page="' + this.name + '"] section.gallery').css('width', '100%'),
+            $('section[data-projet-page="' + this.name + '"] .GalerieSlider').iosSlider('update');
+        },
+        enterFromRouter: function () {
+            $('#homepage').css('display', 'none'),
+            $('section[data-projet-page="' + this.name + '"]').css('display', 'block'),
+            $('section[data-projet-page="' + this.name + '"] .text').css('display', 'block'),
+            $('section[data-projet-page="' + this.name + '"] .content .gallery-back').css('display', 'none'),
+            $('section[data-projet-page="' + this.name + '"] a.OpenGalerie').css('display', 'inline-block'),
+            $('section[data-projet-page="' + this.name + '"] section.gallery').css('width', '45%'),
+            $('section[data-projet-page="' + this.name + '"] .GalerieSlider').iosSlider('update');
         },
         enterGalleryFromRouter: function () {
-        	Backbone.history.navigate("!/case-projet/" + name + "/Galerie", {trigger: true}),
             $('#homepage').css('display', 'none'),
-            $('section[data-projet-page="Convention"]').css('display', 'block'),
-            this.enterGalerie();
+            $('.animateProjet').css('display', 'none'),
+            $('section[data-projet-page="' + this.name + '"]').css('display', 'block'),
+            $('section[data-projet-page="' + this.name + '"] .text').css('display', 'none'),
+            $('section[data-projet-page="' + this.name + '"] a.OpenGalerie').css('display', 'none'),
+            $('section[data-projet-page="' + this.name + '"] .content .gallery-back').css('display', 'block'),
+            $('section[data-projet-page="' + this.name + '"] section.gallery').css('width', '100%'),
+            $('section[data-projet-page="' + this.name + '"] .GalerieSlider').iosSlider('update');
         },
 
     });

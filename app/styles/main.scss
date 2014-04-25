@@ -439,28 +439,17 @@ footer[id=footer] {
 			padding-left: $mediumvalue*2;
 			width: 100%;
 
-			nav.back {
-				right:$mediumvalue*3;
-				top:$mediumvalue*3;
-				a.button {border: 1px #FFF solid;}
-				a {text-decoration: none; color:white; font-size:11px;}
-				a:hover {color:black; background-color:#FFF;}
+			.gallery-back {
 				z-index: 10;
 				display: none;
+				fill: #FFF !important;
 			}
 
 			h1 {color:#FFF;line-height:1.2em; font-size:4.5em;margin-bottom:$mediumvalue;}
 
-			nav.next-projet {
-				position: absolute;
-				bottom:$mediumvalue;
-				right:$mediumvalue;
-				a{text-decoration: none; color:white; font-size:11px;}
-				a:hover {color:black;}
-			}
 		}
 		.GalerieSlider {
-			width: 100%;
+			width: 100% !important;
 			height: 100% !important;
 
 			.slider {
@@ -483,12 +472,6 @@ footer[id=footer] {
 		}
 	}
 
-	section[data-projet-page=Incentive] .item1 {background: transparent url('../images/projet/1/amb5.jpg')}
-	section[data-projet-page=Incentive] .item2 {background: transparent url('../images/projet/1/amb2.jpg')}
-	section[data-projet-page=Incentive] .item3 {background: transparent url('../images/projet/1/amb3.jpg')}
-	section[data-projet-page=Incentive] .item4 {background: transparent url('../images/projet/1/amb4.jpg')}
-	section[data-projet-page=Incentive] .item5 {background: transparent url('../images/projet/1/amb1.jpg')}
-
 	section.text {
 		padding: $mediumvalue*3;
 		background-color:white;
@@ -502,18 +485,33 @@ footer[id=footer] {
 			line-height: 52px;
 			display: inline-block;
 			margin-bottom:$mediumvalue*2;
-		}
-
-		nav.back {
-			display: inline-block;
-			right: 0;
-			margin-right: $mediumvalue*3;
-			margin-top: $mediumvalue/2;
-			a.button {border: 1px #000 solid;}
-			a {text-decoration: none; color:black; font-size:11px;}
-			a:hover {color:white; background-color:#000;}
+			margin-top: 0;
 		}
 	}
+
+	section[data-projet-page=Incentive] .item1 {background: transparent url('../images/projet/1/amb5.jpg')}
+	section[data-projet-page=Incentive] .item2 {background: transparent url('../images/projet/1/amb2.jpg')}
+	section[data-projet-page=Incentive] .item3 {background: transparent url('../images/projet/1/amb3.jpg')}
+	section[data-projet-page=Incentive] .item4 {background: transparent url('../images/projet/1/amb4.jpg')}
+	section[data-projet-page=Incentive] .item5 {background: transparent url('../images/projet/1/amb1.jpg')}
+
+	section[data-projet-page=Convention] .item1 {background: transparent url('../images/projet/3/amb5.jpg')}
+	section[data-projet-page=Convention] .item2 {background: transparent url('../images/projet/3/amb2.jpg')}
+	section[data-projet-page=Convention] .item3 {background: transparent url('../images/projet/3/amb3.jpg')}
+	section[data-projet-page=Convention] .item4 {background: transparent url('../images/projet/3/amb4.jpg')}
+	section[data-projet-page=Convention] .item5 {background: transparent url('../images/projet/3/amb1.jpg')}
+
+	section[data-projet-page=Corporate] .item1 {background: transparent url('../images/projet/2/amb5.jpg')}
+	section[data-projet-page=Corporate] .item2 {background: transparent url('../images/projet/2/amb2.jpg')}
+	section[data-projet-page=Corporate] .item3 {background: transparent url('../images/projet/2/amb3.jpg')}
+	section[data-projet-page=Corporate] .item4 {background: transparent url('../images/projet/2/amb4.jpg')}
+	section[data-projet-page=Corporate] .item5 {background: transparent url('../images/projet/2/amb1.jpg')}
+
+	section[data-projet-page=Seminaire] .item1 {background: transparent url('../images/projet/4/amb5.jpg')}
+	section[data-projet-page=Seminaire] .item2 {background: transparent url('../images/projet/4/amb2.jpg')}
+	section[data-projet-page=Seminaire] .item3 {background: transparent url('../images/projet/4/amb3.jpg')}
+	section[data-projet-page=Seminaire] .item4 {background: transparent url('../images/projet/4/amb4.jpg')}
+	section[data-projet-page=Seminaire] .item5 {background: transparent url('../images/projet/4/amb1.jpg')}
 
 }
 
@@ -592,6 +590,25 @@ footer[id=footer] {
 	to {
 		@include transform(rotate(360deg));
 	}
+}
+
+
+/* ----------------------------- */
+/* == ICON SVG 		             */
+/* ----------------------------- */
+
+.icon {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  display: block;
+  fill: #525151;
+  cursor: pointer;
+}
+
+.icon-close {
+	top:$mediumvalue;
+	right:$mediumvalue;
 }
 
 /* ----------------------------- */
