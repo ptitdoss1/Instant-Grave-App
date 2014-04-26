@@ -1,3 +1,5 @@
+/*global target*/
+
 'use strict';
 var LIVERELOAD_PORT = 35729;
 var SERVER_PORT = 9000;
@@ -268,7 +270,7 @@ module.exports = function (grunt) {
         jst: {
             compile: {
                 files: {
-                    '.tmp/scripts/templates.js': ['<%= yeoman.app %>/scripts/templates/*.ejs']
+                    // '.tmp/scripts/templates.js': ['<%= yeoman.app %>/scripts/templates/*.ejs']
                 }
             }
         },

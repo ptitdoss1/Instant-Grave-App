@@ -399,7 +399,7 @@
 </div>
 
     <!-- bower:js -->
-    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
     <script src="bower_components/backbone/backbone.js"></script>
     <script src="scripts/vendor/jquery.iosslider.min.js"></script>
@@ -419,6 +419,14 @@
     <script src="scripts/views/Convention.js"></script>
     <script src="scripts/views/Incentive.js"></script>
     <!-- endbuild -->
+
+    <script type="text/javascript" charset="utf-8">
+  $(function () {
+    if (navigator.userAgent.indexOf('PhantomJS') < 0) {
+      mocha.run();
+    }
+  });
+</script>
     
 </body>
 </html>

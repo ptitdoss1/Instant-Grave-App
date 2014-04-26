@@ -14,13 +14,15 @@ App.Routers = App.Routers || {};
             '!/case-projet(/)': 'homeEvents',
         },
         projetService: function (e) {
-            this.loadView(e), App.activeProjectView.enterFromRouter();
+            this.loadView(e);
+            App.activeProjectView.enterFromRouter();
         },
         galerieService: function (e) {
-            this.loadView(e), App.activeProjectView.enterGalleryFromRouter();
+            this.loadView(e);
+            App.activeProjectView.enterGalleryFromRouter();
         },
         homeEvents: function (e) {
-            this.loadView(e),
+            this.loadView(e);
             $('html,body').animate({scrollTop: $('.line[data-id="events"]').offset().top}, 2000, 'easeInOutQuint');
         },
         home: function () {

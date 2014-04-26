@@ -1,5 +1,5 @@
 @import "knacss";
-@import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
+@import "../bower_components/bourbon/dist/_bourbon.scss";
 @import "icons/*.png";
 @import "icons-2x/*.png";
 @include all-icons-sprites;
@@ -18,16 +18,16 @@ a {
 }
 
 a.button {
-		border: 1px #FFF solid;
-		background: transparent;
-		padding: $mediumvalue/2 $mediumvalue;
-		font-size: 16px;
-		color: $basebg;
-		text-decoration: none;
-		text-transform: uppercase;
-		@include transition (all 0.3s ease);
-		display: inline-block;
-	}
+	border: 1px #FFF solid;
+	background: transparent;
+	padding: $mediumvalue/2 $mediumvalue;
+	font-size: 16px;
+	color: $basebg;
+	text-decoration: none;
+	text-transform: uppercase;
+	@include transition (all 0.3s ease);
+	display: inline-block;
+}
 
 a.button:hover {
 	border-color: $basebg;

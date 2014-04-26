@@ -9,8 +9,8 @@ window.App = {
     activeProjectView: null,
     init: function () {
         'use strict';
-        this.router = new this.Routers.ApplicationRouter(),
-        this.homeView = new this.Views.Homeview(),
+        this.router = new this.Routers.ApplicationRouter();
+        this.homeView = new this.Views.Homeview();
         Backbone.history.start();
     },
     loadView: function (e) {
@@ -77,10 +77,14 @@ window.App = {
             });
         }
     }
-}, $(window).load(function () {
+};
+
+$(window).load(function () {
     'use strict';
     setTimeout(function () {
-        $('#loader').fadeOut(1e3), App.init(), $(document).scrollTop(0)
+        $('#loader').fadeOut(1e3);
+        App.init();
+        $(document).scrollTop(0);
     }, 500);
 });
 

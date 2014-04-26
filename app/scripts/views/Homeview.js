@@ -1,4 +1,4 @@
-/*global App, Backbone*/
+/*global App, Backbone, skrollr*/
 
 App.Views = App.Views || {};
 
@@ -10,23 +10,23 @@ App.Views = App.Views || {};
 	    caseStudyContainer: $('#homepage'),
 	    initialize: function () {
             var e = this;
-            $('#homepage').css('display', 'block'),
-            $('body').css('overflow', 'auto'),
-            $('.animateProjet').css('display', 'none'),
-            $('section[data-projet-page]').css('display', 'none'),
-	        this.goToByScroll(),
-	        this.Skrollr(),
+            $('#homepage').css('display', 'block');
+            $('body').css('overflow', 'auto');
+            $('.animateProjet').css('display', 'none');
+            $('section[data-projet-page]').css('display', 'none');
+	        this.goToByScroll();
+	        this.Skrollr();
 	        $('#Incentive a.OpenProject').on('click', function () {
-                e.enterProjectEvent('Incentive')
-            }),
+                e.enterProjectEvent('Incentive');
+            });
             $('#Corporate a.OpenProject').on('click', function () {
-                e.enterProjectEvent('Corporate')
-            }),
+                e.enterProjectEvent('Corporate');
+            });
             $('#Convention a.OpenProject').on('click', function () {
-                e.enterProjectEvent('Convention')
-            }),
+                e.enterProjectEvent('Convention');
+            });
             $('#Studio a.OpenProject').on('click', function () {
-                e.enterProjectEvent('Studio')
+                e.enterProjectEvent('Studio');
             });
 	    },
 	    goToByScroll: function(){
