@@ -53,6 +53,7 @@ App.Views = App.Views || {};
             App.homeView.caseStudyContainer.css("display", "block");
             $('section[data-projet-page="' + this.name + '"]').css('display', 'none');
             $('body').css('overflow', 'auto');
+            Backbone.history.navigate('');
         }
 
     });

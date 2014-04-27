@@ -10,6 +10,7 @@ App.Views = App.Views || {};
 	    caseStudyContainer: $('#homepage'),
 	    initialize: function () {
             var e = this;
+            Backbone.history.navigate('');
             $('#homepage').css('display', 'block');
             $('body').css('overflow', 'auto');
             $('.animateProjet').css('display', 'none');
