@@ -82,9 +82,9 @@ window.App = {
 $(window).load(function () {
     'use strict';
     setTimeout(function () {
-        $('#loader').fadeOut(1e3);
         App.init();
         $(document).scrollTop(0);
+        $('#loader').fadeOut(1e3);
     }, 500);
 });
 
