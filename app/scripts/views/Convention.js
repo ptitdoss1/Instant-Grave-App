@@ -8,9 +8,13 @@ App.Views = App.Views || {};
 
         el: $('#projet-page'),
 	    name: 'Convention',
-	    initialize: function () {
+        initialize: function () {
+            var e = this;
             $('section[data-projet-page="' + this.name + '"] a.OpenGalerie').on('click', _.bind(this.enterGalerieClick, this));
             $('body').css('overflow', 'hidden');
+            $('.icon-close').on('click', function () {
+                e.leaveProject();
+            });
         },
         enterProjectClick: function () {
             Backbone.history.navigate('!/case-projet/'+ this.name);
@@ -45,6 +49,11 @@ App.Views = App.Views || {};
             $('section[data-projet-page="' + this.name + '"] section.gallery').css('width', '100%');
             $('section[data-projet-page="' + this.name + '"] .GalerieSlider').iosSlider('update');
         },
+        leaveProject: function () {
+            App.homeView.caseStudyContainer.css("display", "block");
+            $('section[data-projet-page="' + this.name + '"]').css('display', 'none');
+            $('body').css('overflow', 'auto');
+        }
 
     });
 

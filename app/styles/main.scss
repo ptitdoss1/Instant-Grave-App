@@ -491,6 +491,15 @@ footer[id=footer] {
 			margin-bottom:$mediumvalue*2;
 			margin-top: 0;
 		}
+
+		nav {
+			position: absolute;
+			bottom:$mediumvalue*2;
+			right: $mediumvalue*2;
+			a.button {border: 1px #000 solid;}
+			a {text-decoration: none; color:#000; font-size:11px;}
+			a:hover {color:#FFF; background-color:#000;}
+		}
 	}
 
 	section[data-projet-page=Incentive] .item1 {background: transparent url('../images/projet/1/amb5.jpg')}
