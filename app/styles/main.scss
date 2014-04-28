@@ -358,6 +358,15 @@ footer[id=footer] {
 	position: relative;
 	.button-link { cursor: pointer;}
 
+	span[itemprop] {
+		font-size: 12px;
+		color: #999;
+	}
+
+	.data {
+		margin-top: $mediumvalue*2;
+	}
+
 	#meta {
 		margin-top: $mediumvalue*3;
 		border-top: 1px solid #333;
@@ -636,6 +645,8 @@ footer[id=footer] {
 
 @include mq(small) {
 
+	body { overflow-y:auto !important;}
+
 	.pa4, .pa3 {padding: 60px};
 
 	nav[id=navigation] {
@@ -674,16 +685,30 @@ footer[id=footer] {
 	}
 
 	#projet-page {
-		section[id=gallery] {
+
+		section[class=gallery] {
+			h1 {margin-top: 400px;}
 			position: relative;
 			width: 100% !important;
-			height: auto !important;
+			height: 600px !important;
 		}
 
 		section[class=text] {
 			margin-left: 0;
+			padding: $mediumvalue $mediumvalue*2;
 			width: 100%;
 			display: block;
+
+			h2 {margin-bottom: $mediumvalue;}
+
+			nav {
+				position: relative;
+				margin-top:$mediumvalue;
+				right:0;
+				bottom:0;
+				margin-bottom: 20px;
+				div.button { width:100%;text-align: center;}
+			}
 		}
 	}
 
@@ -734,6 +759,24 @@ footer[id=footer] {
 		}
 	}
 
+	#projet-page {
+
+		section[class=gallery] {
+			h1 {margin-top: 200px;}
+			height: 500px !important;
+		}
+		section.text {
+			nav {
+				position: relative;
+				margin-top:$mediumvalue;
+				right:0;
+				bottom:0;
+				margin-bottom: 20px;
+				div.button { width:100%;text-align: center;}
+			}
+		}
+	}
+
 }
 
 @media (max-width: 480px) {
@@ -762,9 +805,9 @@ footer[id=footer] {
 	}
 
 	#projet-page {
-		section[id=gallery] {
-			height: 350px;
-
+		section[class=gallery] {
+			height: 350px !important;
+			h1 {margin-top: 25px;}
 			h1 { line-height:60px; font-size:50px;}
 		}
 	}
@@ -778,4 +821,22 @@ footer[id=footer] {
 	}	
 
 	footer[id=footer] {.logo { display: none} .back {position: relative; text-align: center; right:0; top:0;}}
+
+	#projet-page {
+
+		p {font-size: 16px;}
+
+		section[class=gallery] {
+			height: 250px !important;
+			h1 {font-size: 3em !important;}
+		}
+		section[class=text] {
+			margin-left: 0;
+			padding: $mediumvalue;
+			width: 100%;
+			display: block;
+
+			h2 {font-size: 35px;margin-bottom: 0;} 
+		}
+	}
 }
