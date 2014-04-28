@@ -7,8 +7,19 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Instant Gravé - Agence de Communication et de Voyage</title>
-        <meta name="description" content="">
+        <meta name="description" content="...">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="google-site-verification" content="..." />
+        <meta name="msvalidate.01" content="..." />
+        <meta property="og:title" content="Instant Gravé - Agence de Communication et de Voyage" />
+        <meta property="og:description" content="..." />
+        <meta property="og:image" content="http://www.instant-grave.fr/images/miami-beach-instantgrave.jpg" />
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@instantgrave">
+        <meta name="twitter:creator" content="@instantgrave">
+        <meta name="twitter:title" content="Instant Gravé - Agence de Communication et de Voyage">
+        <meta name="twitter:description" content="...">
+        <meta name="twitter:image" content="http://www.instant-grave.fr/images/miami-beach-instantgrave.jpg">
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="stylesheet" href="styles/knacss.css">
         <link rel="stylesheet" href="styles/main.css">
@@ -22,11 +33,10 @@
 
     <div id="loader">
         <div>
-            <img src="images/logo.svg" width="235" height="30" alt="Instant Gravé Logo" data-id="header" class="button-link" />
-            <p>Chargement ...</p>
-            <span>      
-                <span></span>
-            </span>
+            <img src="images/logo.svg" width="235" height="30" alt="Instant Gravé logo" data-id="header" class="button-link" />
+            <p class="textnojs">Chargement ...</p>
+            <p class="textjs">Merci d'activer le JavaScript pour naviguer sur ce site. Merci</p>
+            <p class="textie">Merci d'utiliser un autre navigateur internet pour naviguer sur ce site. Merci</p>
         </div>
     </div>
 
@@ -38,7 +48,7 @@
                     <h1 class="center">Agence de communication bousculant les codes</h1>
                     <a data-id="events" title="Voir les projets" class="button button-link">voir les projets</a>
                     <a data-id="vision" class="center arrow-bottom animated-arrow button-link">
-                        <img src="images/arrow-bottom.svg" data-id="services" alt="Arrow bottom" class="arrow-bottom-img">
+                        <img src="images/arrow-bottom.svg" data-id="services" alt="" class="arrow-bottom-img">
                     </a>
                 </div>
             </div>
@@ -47,7 +57,7 @@
         <nav id="navigation" role="navigation" class="grid">
 
             <div class="grid">
-                <img src="images/logo.svg" width="235" height="30" alt="Instant Gravé Logo" data-id="vision" class="button-link logo" />
+                <img src="images/logo.svg" width="235" height="30" alt="Instant Gravé logo" data-id="vision" class="button-link logo" />
             </div>
         </nav>
 
@@ -146,7 +156,7 @@
         <section id="contact" role="contact" data-id="contact" class="line pa3 center">
             <div>
                 <h2>Démarrer votre projet maintenant</h2>
-                <p>Contactez nous pour démarer votre projet. Nous sommes déjà heureux de vous avoir !<p/>
+                <p>Contactez nous pour démarer votre projet. Nous sommes déjà heureux de vous avoir !</p>
                 <a href="mailto:contact@instant-grave.fr?subject=[PROJET]%20votre%20objet..." target="_blank" class="button">CONTACTEZ NOUS</a>
             </div>
         </section>
@@ -164,7 +174,7 @@
         <section id="newsletter" role="newsletter" class="line pa3 center">
             <div id="mc_embed_signup">
                 <form role="form" action="http://instant-grave.us8.list-manage.com/subscribe/post?u=4baccaebcb9325459d5702039&amp;id=3a6e49f974" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate mw1140p" target="_blank" novalidate>
-                    <label for="inpEmail">Pour être toujours informé de nos avancées, inscrivez-vous à notre newsletter. <br />
+                    <label>Pour être toujours informé de nos avancées, inscrivez-vous à notre newsletter. <br />
                         <span class="smaller">(3 newsletters maximum par an)</span>
                      </label>
                     
@@ -175,21 +185,28 @@
             </div>
         </section>
 
-        <footer id="footer" class="line w100 pa3 center">
-            <img src="images/logo.svg" width="235" height="30" alt="Instant Gravé Logo" data-id="header" class="button-link" />
+        <footer itemscope itemtype="http://schema.org/Organization" id="footer" class="line w100 pa3 center">
+            <span itemprop="logo"><img src="images/logo.svg" width="235" height="30" alt="Instant Gravé Logo" data-id="header" class="button-link" /></span>
+            <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                <span itemprop="streetAddress">37 Rue des Alliés</span>
+                <span itemprop="postalCode">42100</span>
+                <span itemprop="addressLocality">Saint-Etienne, France</span>
+            </div>
+            <span itemprop="telephone">(+33)6 16 32 69 88</span>
+            <span itemprop="email">contact@instant-grave.fr</span>
             <div id="meta" class="grid2">
                 <div>
                     <a href="https://twitter.com/instantgrave" target="_blank">
                         Twitter <span class="social twitter"></span>
                     </a>
-                    <a href="https://plus.google.com/+InstantgraveFrance" target="_blank">
+                    <a href="https://plus.google.com/+InstantgraveFrance" rel="publisher" target="_blank">
                         Google Plus <span class="social facebook"></span>
                     </a>
                     
                     <a target="_blank" href="http://fr.pinterest.com/instantgrave/">Pinterest</a>
                     <a target="_blank" href="mailto:contact@instant-grave.fr?subject=[PROJET]%20votre%20objet...">Contactez-nous</a>
                 </div>
-                <span>© 2014 Instant Gravé.</span>
+                <span>© 2014 <span itemprop="brand">Instant Gravé</span>.</span>
             </div>
         </footer>
 
@@ -394,34 +411,35 @@
     </div>
 </div>
 
-    <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/underscore/underscore.js"></script>
-    <script src="bower_components/backbone/backbone.js"></script>
-    <script src="scripts/vendor/jquery.iosslider.min.js"></script>
-    <script src="bower_components/classie/classie.js"></script>
-    <script src="bower_components/jquery-waypoints/waypoints.min.js"></script>
-    <script src="bower_components/jquery.easing/js/jquery.easing.min.js"></script>
-    <script src="bower_components/Midway.js/midway.min.js"></script>
-    <script src="bower_components/skrollr/dist/skrollr.min.js"></script>
-    <!-- endbuild -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/underscore/underscore.js"></script>
+<script src="bower_components/backbone/backbone.js"></script>
+<script src="scripts/vendor/jquery.iosslider.min.js"></script>
+<script src="bower_components/classie/classie.js"></script>
+<script src="bower_components/jquery-waypoints/waypoints.min.js"></script>
+<script src="bower_components/jquery.easing/js/jquery.easing.min.js"></script>
+<script src="bower_components/Midway.js/midway.min.js"></script>
+<script src="bower_components/skrollr/dist/skrollr.min.js"></script>
+<!-- endbuild -->
 
-    <!-- build:js({.tmp,app}) scripts/main.js -->
-    <script src="scripts/main.js"></script>
-    <script src="scripts/routers.js"></script>
-    <script src="scripts/views/Homeview.js"></script>
-    <script src="scripts/views/Corporate.js"></script>
-    <script src="scripts/views/Studio.js"></script>
-    <script src="scripts/views/Convention.js"></script>
-    <script src="scripts/views/Incentive.js"></script>
-    <!-- endbuild -->
+<!-- build:js({.tmp,app}) scripts/main.js -->
+<script src="scripts/main.js"></script>
+<script src="scripts/routers.js"></script>
+<script src="scripts/views/Homeview.js"></script>
+<script src="scripts/views/Corporate.js"></script>
+<script src="scripts/views/Studio.js"></script>
+<script src="scripts/views/Convention.js"></script>
+<script src="scripts/views/Incentive.js"></script>
+<!-- endbuild -->
 
-    <script type="text/javascript" charset="utf-8">
-  $(function () {
-    if (navigator.userAgent.indexOf('PhantomJS') < 0) {
-      mocha.run();
-    }
-  });
+<script>
+    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+    e.src='//www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    ga('create','UA-34349995-1');ga('send','pageview');
 </script>
     
 </body>

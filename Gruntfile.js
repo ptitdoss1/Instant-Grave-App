@@ -134,14 +134,14 @@ module.exports = function (grunt) {
                 'test/spec/{,*/}*.js'
             ]
         },
-        mocha: {
-            all: {
-                options: {
-                    run: true,
-                    urls: ['http://localhost:<%= connect.test.options.port %>/index.html']
-                }
-            }
-        },
+        // mocha: {
+        //     all: {
+        //         options: {
+        //             run: true,
+        //             urls: ['http://localhost:<%= connect.test.options.port %>/index.html']
+        //         }
+        //     }
+        // },
         coffee: {
             dist: {
                 files: [{
@@ -337,7 +337,7 @@ module.exports = function (grunt) {
                 'jst',
                 'compass',
                 'connect:test',
-                'mocha',
+                // 'mocha',
                 'watch:test'
             ];
             

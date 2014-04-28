@@ -12,7 +12,7 @@ App.Views = App.Views || {};
             var e = this;
             Backbone.history.navigate('');
             $('#homepage').css('display', 'block');
-            $('body').css('overflow', 'auto');
+            $('body').css('overflow-y', 'auto');
             $('.animateProjet').css('display', 'none');
             $('section[data-projet-page]').css('display', 'none');
 	        this.goToByScroll();

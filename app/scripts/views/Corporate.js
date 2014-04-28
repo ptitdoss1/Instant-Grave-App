@@ -64,6 +64,8 @@ App.Views = App.Views || {};
         },
         leaveProject: function () {
             App.homeView.caseStudyContainer.css("display", "block");
+            $('.eventSlider').iosSlider('update');
+            $('.eventSlider').iosSlider('goToSlide', 2);
             $('section[data-projet-page="' + this.name + '"]').css('display', 'none');
             $('body').css('overflow', 'auto');
             Backbone.history.navigate('events');

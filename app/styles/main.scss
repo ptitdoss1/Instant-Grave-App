@@ -57,6 +57,8 @@ a.button:hover, div.button:hover {
 /* ==own stylesheet              */
 /* ----------------------------- */
 
+body {overflow:hidden;}
+
 div[id=global] {
 
 	text-align: center;
@@ -532,6 +534,9 @@ footer[id=footer] {
 /* ----------------------------- */
 /* == LOADING 	            	 */
 /* ----------------------------- */
+
+.js .textjs, .no-js .textnojs, .textie {display:none;}
+.no-js .textjs, .lt-ie9 .textie {display:block;}
 
 #loader {
 	position:fixed;
