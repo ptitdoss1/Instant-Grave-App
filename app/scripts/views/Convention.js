@@ -10,10 +10,23 @@ App.Views = App.Views || {};
 	    name: 'Convention',
         initialize: function () {
             var e = this;
-            $('section[data-projet-page="' + this.name + '"] a.OpenGalerie').on('click', _.bind(this.enterGalerieClick, this));
+            $('section[data-projet-page="' + e.name + '"] a.OpenGalerie').on('click', _.bind(e.enterGalerieClick, e));
             $('body').css('overflow', 'hidden');
-            $('.icon-close').on('click', function () {
+            $('.text .icon-close').on('click', function () {
                 e.leaveProject();
+            });
+            $('.content .icon-close').on('click', function () {
+                e.leaveGallery();
+            });
+            $('section[data-projet-page="' + e.name + '"] .before').on('click', function () {
+                $('section[data-projet-page="' + e.name + '"]').css('display', 'none');
+                Backbone.history.navigate('!/case-projet/Corporate');
+                new App.Views.Corporate().enterFromRouter();
+            });
+            $('section[data-projet-page="' + e.name + '"] .after').on('click', function () {
+                $('section[data-projet-page="' + e.name + '"]').css('display', 'none');
+                Backbone.history.navigate('!/case-projet/Studio');
+                new App.Views.Studio().enterFromRouter();
             });
         },
         enterProjectClick: function () {
@@ -53,9 +66,12 @@ App.Views = App.Views || {};
             App.homeView.caseStudyContainer.css("display", "block");
             $('section[data-projet-page="' + this.name + '"]').css('display', 'none');
             $('body').css('overflow', 'auto');
-            Backbone.history.navigate('');
+            Backbone.history.navigate('events');
+        },
+        leaveGallery: function () {
+            Backbone.history.navigate('!/case-projet/'+ this.name);
+            this.enterFromRouter();
         }
-
     });
 
 })();
