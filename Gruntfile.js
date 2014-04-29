@@ -213,8 +213,9 @@ module.exports = function (grunt) {
             dist: {
                 files: [{
                     expand: true,
+                    cache: false,
                     cwd: '<%= yeoman.app %>/images',
-                    src: '{,*/}*.{png,jpg,jpeg}',
+                    src: '{,*/**/}*.{png,jpg,jpeg}',
                     dest: '<%= yeoman.dist %>/images'
                 }]
             }
@@ -226,21 +227,28 @@ module.exports = function (grunt) {
                         '.tmp/styles/{,*/}*.css',
                         '<%= yeoman.app %>/styles/{,*/}*.css'
                     ]
+                    //, '<%= yeoman.dist %>/styles/knacss.css': [
+                    //     '.tmp/styles/{,*/}*.css',
+                    //     '<%= yeoman.app %>/styles/{,*/}*.css'
+                    // ]
                 }
             }
         },
         htmlmin: {
             dist: {
                 options: {
-                    /*removeCommentsFromCDATA: true,
-                    // https://github.com/yeoman/grunt-usemin/issues/44
-                    //collapseWhitespace: true,
-                    collapseBooleanAttributes: true,
-                    removeAttributeQuotes: true,
-                    removeRedundantAttributes: true,
-                    useShortDoctype: true,
-                    removeEmptyAttributes: true,
-                    removeOptionalTags: true*/
+                  removeComments: true,
+                  // removeCommentsFromCDATA: true,
+                  // removeCDATASectionsFromCDATA: true,
+                  // https://github.com/yeoman/grunt-usemin/issues/44
+                  // collapseWhitespace: true,
+                  collapseBooleanAttributes: true,
+                  removeAttributeQuotes: true,
+                  removeRedundantAttributes: true,
+                  // useShortDoctype: true,
+                  removeEmptyAttributes: true,
+                  // removeOptionalTags: true,
+                  // removeEmptyElements: true,
                 },
                 files: [{
                     expand: true,
@@ -260,9 +268,8 @@ module.exports = function (grunt) {
                     src: [
                         '*.{ico,txt}',
                         '.htaccess',
-                        'images/{,*/}*.{webp,gif}',
+                        'images/{,*/}*.{webp,gif,svg}',
                         'styles/fonts/{,*/}*.*',
-                        'bower_components/sass-bootstrap/fonts/*.*'
                     ]
                 }]
             }
@@ -270,7 +277,7 @@ module.exports = function (grunt) {
         jst: {
             compile: {
                 files: {
-                    // '.tmp/scripts/templates.js': ['<%= yeoman.app %>/scripts/templates/*.ejs']
+                    '.tmp/scripts/templates.js': ['<%= yeoman.app %>/scripts/templates/*.ejs']
                 }
             }
         },
@@ -308,7 +315,7 @@ module.exports = function (grunt) {
                 'clean:server',
                 'coffee',
                 'createDefaultTemplate',
-                'jst',
+                // 'jst',
                 'compass:server',
                 'connect:test',
                 'open:test',
@@ -320,7 +327,7 @@ module.exports = function (grunt) {
             'clean:server',
             'coffee:dist',
             'createDefaultTemplate',
-            'jst',
+            // 'jst',
             'compass:server',
             'connect:livereload',
             'open:server',
@@ -334,7 +341,7 @@ module.exports = function (grunt) {
                 'clean:server',
                 'coffee',
                 'createDefaultTemplate',
-                'jst',
+                // 'jst',
                 'compass',
                 'connect:test',
                 // 'mocha',
@@ -354,7 +361,7 @@ module.exports = function (grunt) {
         'clean:dist',
         'coffee',
         'createDefaultTemplate',
-        'jst',
+        // 'jst',
         'compass:dist',
         'useminPrepare',
         'imagemin',
@@ -363,7 +370,7 @@ module.exports = function (grunt) {
         'cssmin',
         'uglify',
         'copy',
-        'rev',
+        // 'rev',
         'usemin'
     ]);
 
