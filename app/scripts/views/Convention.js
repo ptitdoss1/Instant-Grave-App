@@ -64,7 +64,7 @@ App.Views = App.Views || {};
             $('section[data-projet-page="' + this.name + '"] .GalerieSlider').iosSlider('update');
         },
         leaveProject: function () {
-            App.homeView.caseStudyContainer.css("display", "block");
+            App.homeView.caseStudyContainer.css('display', 'block');
             $('.eventSlider').iosSlider('update');
             $('.eventSlider').iosSlider('goToSlide', 3);
             $('section[data-projet-page="' + this.name + '"]').css('display', 'none');

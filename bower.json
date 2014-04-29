@@ -1,6 +1,23 @@
 {
-  "name": "test",
-  "version": "0.0.0",
+  "name": "Instant Gravé App",
+  "version": "1.0.0",
+  "ignore": [
+        ".sass-cache",
+        "node_modules",
+        "test",
+        "source",
+        "spec",
+        ".bowerrc",
+        ".editorconfig",
+        ".gitattributes",
+        ".gitignore",
+        ".jshintrc",
+        ".yo-rc.json",
+        "bower.json",
+        "gruntfile.js",
+        "package.json",
+        "README.md"
+    ],
   "dependencies": {
     "sass-bootstrap": "~3.0.0",
     "jquery": "~2.1.0",
