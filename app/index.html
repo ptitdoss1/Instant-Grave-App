@@ -23,9 +23,13 @@
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="stylesheet" href="styles/knacss.css">
         <link rel="stylesheet" href="styles/main.css">
-        <script src="bower_components/modernizr/modernizr.js"></script>
         <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'> 
+        <!-- build:js({.tmp,app}) scripts/pace.js -->
+        <script src="bower_components/modernizr/modernizr.js"></script>  
+        <!-- endbuild -->
+        <!-- build:js({.tmp,app}) scripts/pace.js -->
         <script src="bower_components/pace/pace.min.js"></script>  
+        <!-- endbuild -->
     </head>
     <body>
     
@@ -414,7 +418,17 @@
     </div>
 </div>
 
-<!-- bower:js -->
+<!-- build:js({.tmp,app}) scripts/main.js -->
+<script src="scripts/main.js"></script>
+<script src="scripts/routers.js"></script>
+<script src="scripts/views/Homeview.js"></script>
+<script src="scripts/views/Corporate.js"></script>
+<script src="scripts/views/Studio.js"></script>
+<script src="scripts/views/Convention.js"></script>
+<script src="scripts/views/Incentive.js"></script>
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/underscore/underscore.js"></script>
 <script src="bower_components/backbone/backbone.js"></script>
@@ -424,16 +438,6 @@
 <script src="bower_components/jquery.easing/js/jquery.easing.min.js"></script>
 <script src="bower_components/Midway.js/midway.min.js"></script>
 <script src="bower_components/skrollr/dist/skrollr.min.js"></script>
-<!-- endbuild -->
-
-<!-- build:js({.tmp,app}) scripts/main.js -->
-<script src="scripts/main.js"></script>
-<script src="scripts/routers.js"></script>
-<script src="scripts/views/Homeview.js"></script>
-<script src="scripts/views/Corporate.js"></script>
-<script src="scripts/views/Studio.js"></script>
-<script src="scripts/views/Convention.js"></script>
-<script src="scripts/views/Incentive.js"></script>
 <!-- endbuild -->
 
 <script>
