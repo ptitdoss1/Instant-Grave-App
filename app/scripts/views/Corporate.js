@@ -72,6 +72,9 @@ App.Views = App.Views || {};
         },
         leaveGallery: function () {
             Backbone.history.navigate('!/case-projet/'+ this.name);
+            $('section[data-projet-page="Incentive"]').css('display', 'none');
+            $('section[data-projet-page="Studio"]').css('display', 'none');
+            $('section[data-projet-page="Convention"]').css('display', 'none');
             this.enterFromRouter();
         }
     });
