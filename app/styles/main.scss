@@ -151,7 +151,7 @@ header[id=header] {
 
 
 nav[id=navigation] {
-	padding: $mediumvalue;
+	padding: $mediumvalue*2;
 	width: 100%;
 	text-align: left;
 	background-color:#141414;
@@ -659,7 +659,7 @@ footer[id=footer] {
 
 	body { overflow-y:auto !important;}
 
-	.pa4, .pa3 {padding: 60px};
+	.pa4, .pa3 {padding: $mediumvalue*3};
 
 	nav[id=navigation] {
 		.grid3 > * {width: 33.333% !important;}
@@ -739,7 +739,7 @@ footer[id=footer] {
 
 @include mq(tiny) {
 
-	.pa4, .pa3 {padding: $mediumvalue};
+	.pa4, .pa3 {padding: $mediumvalue*2};
 
 	section[id=services] div.zone.icon-visuel:before, section[id=services] div.zone.icon-challenge:before, 
 	section[id=services] div.zone.icon-event:before, section[id=services] div.zone.icon-conv:before, 
