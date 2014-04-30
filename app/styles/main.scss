@@ -824,11 +824,18 @@ footer[id=footer] {
 
 		p {font-size: 16px;}
 
-		section[class=gallery] {
+		section.gallery {
 			height: 250px !important;
-			h1 {font-size: 3em !important;}
+
+			div.content {
+
+				h1 {font-size: 3em !important;}
+				
+				padding-left: $mediumvalue*2;
+				bottom:$mediumvalue;
+			}
 		}
-		section[class=text] {
+		section.text {
 			margin-left: 0;
 			padding: $mediumvalue;
 			width: 100%;

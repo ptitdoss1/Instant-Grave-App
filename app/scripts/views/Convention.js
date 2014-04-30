@@ -51,7 +51,6 @@ App.Views = App.Views || {};
             $('section[data-projet-page="' + this.name + '"] a.OpenGalerie').css('display', 'inline-block');
             $('section[data-projet-page="' + this.name + '"] section.gallery').css('width', '45%');
             $('section[data-projet-page="' + this.name + '"] .GalerieSlider').iosSlider('update');
-            console.log(this.name);
         },
         enterGalleryFromRouter: function () {
             $('#homepage').css('display', 'none');
