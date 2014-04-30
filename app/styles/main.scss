@@ -43,7 +43,7 @@ a.button, div.button {
 	}
 }
 
-a.button:hover, div.button:hover {
+a.button:hover, div.button:hover, a.button:focus, div.button:focus {
 	border-color: $basebg;
 	background-color: $basebg;
 	color: black;
@@ -133,7 +133,7 @@ header[id=header] {
 		}
 	}
 
-	a.arrow-bottom:hover {
+	a.arrow-bottom:hover, a.arrow-bottom:focus {
 		img[class=arrow-bottom-img] {
 			@include animation-play-state(paused);
 		}
@@ -283,6 +283,8 @@ section[id=services] {
 	}
 }
 
+section[id=services].pa3 { padding:100px 40px;}
+
 section[id=contact] {
 	text-align: center;
 	background: url('../images/soiree-instant-grave.jpg') no-repeat center center fixed;
@@ -291,7 +293,7 @@ section[id=contact] {
 
 	a[class=button] {margin-top: $mediumvalue*2; display: inline-block}
 
-	a[class=button]:hover {color: #2c3e50;}
+	a[class=button]:hover, a[class=button]:focus {color: #2c3e50;}
 }
 
 section[id=clients] {
@@ -354,7 +356,7 @@ section[id=newsletter] {
 		@include transition (all 0.3s ease);
 	}
 
-	button:hover {
+	button:hover, button:focus {
 		background: #FFF;
 		color:#34495e;
 		@include transition (all 0.3s ease);
@@ -397,7 +399,7 @@ footer[id=footer] {
 			}
 
 			a {@include transition (all 0.3s ease);}
-			a:hover {color: #FFF;}
+			a:hover, a:focus {color: #FFF;}
 		}
 
 		> span {
@@ -521,7 +523,7 @@ footer[id=footer] {
 			right: $mediumvalue*2;
 			div.button {border: 1px #000 solid;}
 			div {text-decoration: none; color:#000; font-size:11px;}
-			div:hover {color:#FFF; background-color:#000;}
+			div:hover, div:focus {color:#FFF; background-color:#000;}
 		}
 	}
 
@@ -587,48 +589,20 @@ footer[id=footer] {
 }
 
 .pace .pace-progress {
-	background: #3498db;
+	display: block;
 	position: fixed;
 	z-index: 2000;
 	top: 0;
 	left: 0;
-	height: 2px;
-	@include transition(width 1s);
+	height: 20px;
+	background: #e73181;
+
+	@include transition (transform 0.3s, width 1s);
+	@include transform(translateY(-50px));
 }
 
-.pace .pace-progress-inner {
-	display: block;
-	position: absolute;
-	right: 0px;
-	width: 100px;
-	height: 100%;
-	box-shadow: 0 0 10px #3498db, 0 0 5px #3498db;
-	opacity: 1.0;
-	@include transform(rotate(3deg) translateY(-4px));
-}
-
-.pace .pace-activity {
-	display: block;
-	position: fixed;
-	z-index: 2000;
-	top: 15px;
-	right: 15px;
-	width: 14px;
-	height: 14px;
-	border: solid 2px transparent;
-	border-top-color: #29d;
-	border-left-color: #29d;
-	border-radius: 10px;
-	@include animation(pace-spinner 400ms linear infinite);
-}
-
-@include keyframes(pace-spinner) {
-	from {
-		@include transform(rotate(0deg));
-	}
-	to {
-		@include transform(rotate(360deg));
-	}
+.pace.pace-active .pace-progress {
+  @include transform(translateY(0));
 }
 
 
