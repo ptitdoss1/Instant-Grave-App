@@ -34,14 +34,6 @@ module.exports = function (grunt) {
                 nospawn: true,
                 livereload: true
             },
-            coffee: {
-                files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
-                tasks: ['coffee:dist']
-            },
-            coffeeTest: {
-                files: ['test/spec/{,*/}*.coffee'],
-                tasks: ['coffee:test']
-            },
             compass: {
                 files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
                 tasks: ['compass']
@@ -54,9 +46,8 @@ module.exports = function (grunt) {
                     '<%= yeoman.app %>/*.html',
                     '{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
                     '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
-                    '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}',
+                    '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
                     '<%= yeoman.app %>/scripts/templates/*.{ejs,mustache,hbs}',
-                    'test/spec/**/*.js'
                 ]
             },
             jst: {
@@ -66,7 +57,7 @@ module.exports = function (grunt) {
                 tasks: ['jst']
             },
             test: {
-                files: ['<%= yeoman.app %>/scripts/{,*/}*.js', 'test/spec/**/*.js'],
+                files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
                 tasks: ['test:true']
             }
         },
@@ -89,7 +80,7 @@ module.exports = function (grunt) {
             },
             test: {
                 options: {
-                    port: 9001,
+                    port: SERVER_PORT,
                     middleware: function (connect) {
                         return [
                             lrSnippet,
@@ -142,28 +133,6 @@ module.exports = function (grunt) {
         //         }
         //     }
         // },
-        coffee: {
-            dist: {
-                files: [{
-                    // rather than compiling multiple files here you should
-                    // require them into your main .coffee file
-                    expand: true,
-                    cwd: '<%= yeoman.app %>/scripts',
-                    src: '{,*/}*.coffee',
-                    dest: '.tmp/scripts',
-                    ext: '.js'
-                }]
-            },
-            test: {
-                files: [{
-                    expand: true,
-                    cwd: 'test/spec',
-                    src: '{,*/}*.coffee',
-                    dest: '.tmp/spec',
-                    ext: '.js'
-                }]
-            }
-        },
         compass: {
             options: {
                 sassDir: '<%= yeoman.app %>/styles',
@@ -237,16 +206,16 @@ module.exports = function (grunt) {
         htmlmin: {
             dist: {
                 options: {
-                  removeComments: true,
+                  // removeComments: true,
                   // removeCommentsFromCDATA: true,
                   // removeCDATASectionsFromCDATA: true,
                   // https://github.com/yeoman/grunt-usemin/issues/44
                   // collapseWhitespace: true,
-                  collapseBooleanAttributes: true,
-                  removeAttributeQuotes: true,
-                  removeRedundantAttributes: true,
+                  // collapseBooleanAttributes: true,
+                  // removeAttributeQuotes: true,
+                  // removeRedundantAttributes: true,
                   // useShortDoctype: true,
-                  removeEmptyAttributes: true,
+                  // removeEmptyAttributes: true,
                   // removeOptionalTags: true,
                   // removeEmptyElements: true,
                 },
@@ -313,7 +282,6 @@ module.exports = function (grunt) {
         if (target === 'test') {
             return grunt.task.run([
                 'clean:server',
-                'coffee',
                 'createDefaultTemplate',
                 // 'jst',
                 'compass:server',
@@ -325,7 +293,6 @@ module.exports = function (grunt) {
 
         grunt.task.run([
             'clean:server',
-            'coffee:dist',
             'createDefaultTemplate',
             // 'jst',
             'compass:server',
@@ -339,9 +306,8 @@ module.exports = function (grunt) {
         isConnected = Boolean(isConnected);
         var testTasks = [
                 'clean:server',
-                'coffee',
                 'createDefaultTemplate',
-                // 'jst',
+                'jst',
                 'compass',
                 'connect:test',
                 // 'mocha',
@@ -359,9 +325,8 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
         'clean:dist',
-        'coffee',
         'createDefaultTemplate',
-        // 'jst',
+        'jst',
         'compass:dist',
         'useminPrepare',
         'imagemin',

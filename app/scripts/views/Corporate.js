@@ -11,7 +11,7 @@ App.Views = App.Views || {};
         initialize: function () {
             var e = this;
             $('section[data-projet-page="' + e.name + '"] a.OpenGalerie').on('click', _.bind(e.enterGalerieClick, e));
-            $('body').css('overflow', 'hidden');
+            //$('body').css('overflow', 'hidden');
             $('.text .icon-close').on('click', function () {
                 e.leaveProject();
             });
@@ -37,6 +37,7 @@ App.Views = App.Views || {};
         },
         enterGalerieClick: function () {
             Backbone.history.navigate('!/case-projet/' + this.name + '/Galerie');
+            $('section[data-projet-page="' + this.name + '"] .gallery').removeClass('nofullscreen');
             $('section[data-projet-page="' + this.name + '"] .text').css('display', 'none');
             $('section[data-projet-page="' + this.name + '"] a.OpenGalerie').css('display', 'none');
             $('section[data-projet-page="' + this.name + '"] .content .gallery-back').css('display', 'block');
@@ -55,6 +56,7 @@ App.Views = App.Views || {};
         enterGalleryFromRouter: function () {
             $('#homepage').css('display', 'none');
             $('.animateProjet').css('display', 'none');
+            $('section[data-projet-page="' + this.name + '"] .gallery').removeClass('nofullscreen');
             $('section[data-projet-page="' + this.name + '"]').css('display', 'block');
             $('section[data-projet-page="' + this.name + '"] .text').css('display', 'none');
             $('section[data-projet-page="' + this.name + '"] a.OpenGalerie').css('display', 'none');
@@ -72,6 +74,7 @@ App.Views = App.Views || {};
         },
         leaveGallery: function () {
             Backbone.history.navigate('!/case-projet/'+ this.name);
+            $('section[data-projet-page="' + this.name + '"] .gallery').addClass('nofullscreen');
             $('section[data-projet-page="Incentive"]').css('display', 'none');
             $('section[data-projet-page="Studio"]').css('display', 'none');
             $('section[data-projet-page="Convention"]').css('display', 'none');
