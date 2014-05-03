@@ -5,7 +5,7 @@
 @include all-icons-sprites;
 
 /* ----------------------------- */
-/* VARIABLEE
+/* VARIABLE / GLOBALE
 /* ----------------------------- */
 
 $mediumvalue : 20px;
@@ -66,18 +66,6 @@ a.button:hover, div.button:hover, a.button:focus, div.button:focus {
   }
 }
 
-/* ----------------------------- */
-/* ==own stylesheet              */
-/* ----------------------------- */
-
-div[id=global] {
-
-	text-align: center;
-	p {
-		font-weight: 100;
-	}
-}
-
 .valign {
 	display: table;
 	table-layout: fixed;
@@ -104,6 +92,36 @@ div[id=global] {
 
 .prev {left: 0; cursor: w-resize !important;}
 .next {right: 0; cursor: e-resize !important;}
+
+.iosSliderButtons {
+	position: absolute;
+	bottom: 20px;
+}
+
+.iosSliderButtons .button {
+	display: inline-block;
+	opacity: 0.25;
+	margin: 0 5px;
+	font-size:12px;
+}
+
+.iosSliderButtons .selected {
+	background-color: #FFF;
+	opacity: 1;
+	color:#000;
+}
+
+/* ----------------------------- */
+/* == #GLOBAL		             */
+/* ----------------------------- */
+
+div[id=global] {
+
+	text-align: center;
+	p {
+		font-weight: 100;
+	}
+}
 
 /* ----------------------------- */
 /* == HEADER		             */
@@ -192,7 +210,7 @@ section[id=events] {
 
 			.item {
 				float:left;
-				max-width: 1140px;
+				max-width: 1200px;
 				width: 100%;
 
 				.intro {
@@ -211,7 +229,7 @@ section[id=events] {
 					position: relative;
 					top: 0;
 					left: 0;
-					max-width: 1140px;
+					max-width: 1200px;
 					width: 100%;
 					margin: 0 auto;
 					height: auto;

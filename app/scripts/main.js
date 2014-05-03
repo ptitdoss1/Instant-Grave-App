@@ -42,9 +42,15 @@ window.App = {
                 width: setWidth
             });
         }
+        function slideContentChange(e) {
+            $(e.sliderObject).parent().find('.iosSliderButtons .button').removeClass('selected');
+            $(e.sliderObject).parent().find('.iosSliderButtons .button:eq(' + (e.currentSlideNumber - 1) + ')').addClass('selected');
+        }
 
         function sliderLoaded() {
             sliderResize();
+            $(e.sliderObject).parent().find('.iosSliderButtons .button').removeClass('selected');
+            $(e.sliderObject).parent().find('.iosSliderButtons .button:eq(' + (e.currentSlideNumber - 1) + ')').addClass('selected');
         }
         function sliderLoadedGallery() {
             sliderResizeGallery();
@@ -59,6 +65,8 @@ window.App = {
                 keyboardControls: true,
                 onSliderLoaded: sliderLoaded,
                 onSliderResize: sliderResize,
+                onSlideChange: slideContentChange,
+                navSlideSelector: $('.iosSliderButtons .button'),
                 navNextSelector: $('.eventSlider .next'),
                 navPrevSelector: $('.eventSlider .prev')
             });
@@ -67,7 +75,7 @@ window.App = {
             $(e).iosSlider({
                 snapToChildren: true,
                 desktopClickDrag: true,
-                infiniteSlider: true,
+                infiniteSlider: false,
                 snapSlideCenter: true,
                 keyboardControls: true,
                 onSliderUpdate: sliderLoadedGallery,
