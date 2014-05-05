@@ -39,9 +39,11 @@ App.Views = App.Views || {};
 	        });
 	    },
 	    Skrollr: function () {
-	        skrollr.init({
-	            forceHeight: false
-	        });
+            if ($('html').hasClass('no-touch')) {
+                skrollr.init({
+                    forceHeight: false
+                });
+            }
 	    },
         enterProjectEvent: function (e) {
             switch (e) {

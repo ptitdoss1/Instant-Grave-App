@@ -96,6 +96,7 @@ a.button:hover, div.button:hover, a.button:focus, div.button:focus {
 .iosSliderButtons {
 	position: absolute;
 	bottom: 20px;
+	z-index:2;
 }
 
 .iosSliderButtons .button {
@@ -121,6 +122,12 @@ div[id=global] {
 	p {
 		font-weight: 100;
 	}
+}
+
+#skrollr-body {
+  height: 100%;
+  position: relative;
+  width: 100%;
 }
 
 /* ----------------------------- */
@@ -218,7 +225,7 @@ section[id=events] {
 					height: 100%;
 					background-color: #000;
 					color: $basebg;
-					z-index: 999;
+					z-index: 1;
 					opacity: 0.8;
 					position: absolute;
 
@@ -321,7 +328,7 @@ section[id=clients] {
 	}
 	background-color: $basebg;
 
-	div {min-height: 28px; display: inline-block; vertical-align: middle; margin: 0px 20px;}
+	div {display: inline-block; vertical-align: middle; margin: 0px 20px;}
 
 	div.icons-etam {
 		@include sprite-background(etam);
@@ -733,6 +740,8 @@ footer[id=footer] {
 
 	.pa4, .pa3 {padding: $mediumvalue*2};
 
+	section[id=services].pa3 {padding: $mediumvalue*2};
+
 	section[id=services] div.zone.icon-visuel:before, section[id=services] div.zone.icon-challenge:before, 
 	section[id=services] div.zone.icon-event:before, section[id=services] div.zone.icon-conv:before, 
 	section[id=services] div.zone.icon-stand:before, section[id=services] div.zone.icon-light:before { width:35px;}
@@ -740,6 +749,10 @@ footer[id=footer] {
 	section[id=services] {
 		h1 {margin-bottom: 1em;}
 		div.zone {padding-left: 50px;padding-right: 0%;}
+	}
+
+	section[id=events] {
+		.iosSliderButtons {display:none !important;}
 	}
 
 	section[id=vision] {
