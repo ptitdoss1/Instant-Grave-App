@@ -25,8 +25,8 @@ App.Views = App.Views || {};
             $('#Convention a.OpenProject').on('click', function () {
                 e.enterProjectEvent('Convention');
             });
-            $('#Studio a.OpenProject').on('click', function () {
-                e.enterProjectEvent('Studio');
+            $('#Animation a.OpenProject').on('click', function () {
+                e.enterProjectEvent('Animation');
             });
 	    },
 	    goToByScroll: function(){
@@ -56,8 +56,8 @@ App.Views = App.Views || {};
             case 'Convention':
                 App.loadView(new App.Views.Convention().enterProjectClick());
                 break;
-            case 'Studio':
-                App.loadView(new App.Views.Studio().enterProjectClick());
+            case 'Animation':
+                App.loadView(new App.Views.Animation().enterProjectClick());
                 break;
             default:
                 App.loadView(null);

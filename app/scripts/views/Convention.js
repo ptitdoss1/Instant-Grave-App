@@ -25,8 +25,8 @@ App.Views = App.Views || {};
             });
             $('section[data-projet-page="' + e.name + '"] .after').on('click', function () {
                 $('section[data-projet-page="' + e.name + '"]').css('display', 'none');
-                Backbone.history.navigate('!/case-projet/Studio');
-                new App.Views.Studio().enterFromRouter();
+                Backbone.history.navigate('!/case-projet/Animation');
+                new App.Views.Animation().enterFromRouter();
             });
         },
         enterProjectClick: function () {
@@ -50,7 +50,7 @@ App.Views = App.Views || {};
             $('section[data-projet-page="' + this.name + '"] .text').css('display', 'block');
             $('section[data-projet-page="' + this.name + '"] .content .gallery-back').css('display', 'none');
             $('section[data-projet-page="' + this.name + '"] a.OpenGalerie').css('display', 'inline-block');
-            $('section[data-projet-page="' + this.name + '"] section.gallery').css('width', '45%');
+            $('section[data-projet-page="' + this.name + '"] section.gallery').css('width', '65%');
             $('section[data-projet-page="' + this.name + '"] .GalerieSlider').iosSlider('update');
         },
         enterGalleryFromRouter: function () {
@@ -76,7 +76,7 @@ App.Views = App.Views || {};
             Backbone.history.navigate('!/case-projet/'+ this.name);
             $('section[data-projet-page="' + this.name + '"] .gallery').addClass('nofullscreen');
             $('section[data-projet-page="Incentive"]').css('display', 'none');
-            $('section[data-projet-page="Studio"]').css('display', 'none');
+            $('section[data-projet-page="Animation"]').css('display', 'none');
             $('section[data-projet-page="Corporate"]').css('display', 'none');
             this.enterFromRouter();
         }

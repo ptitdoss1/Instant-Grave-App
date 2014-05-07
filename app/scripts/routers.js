@@ -42,8 +42,8 @@ App.Routers = App.Routers || {};
             case 'Convention':
                 App.loadView(new App.Views.Convention());
                 break;
-            case 'Studio':
-                App.loadView(new App.Views.Studio());
+            case 'Animation':
+                App.loadView(new App.Views.Animation());
                 break;
             default:
                 App.loadView(null);

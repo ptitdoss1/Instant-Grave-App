@@ -229,7 +229,7 @@ section[id=events] {
 					opacity: 0.8;
 					position: absolute;
 
-					p {margin-top: 0;margin-bottom: 25%;}
+					p {margin-bottom: 10%;}
 				}
 
 				img {
@@ -419,12 +419,15 @@ footer[id=footer] {
 			a {
 				float: right;
 				color: #999;
-				margin-left: 40px;
+				margin-left: 30px;
 				text-decoration: none;
+				@include transition (all 0.3s ease);
 			}
 
-			a {@include transition (all 0.3s ease);}
-			a:hover, a:focus {color: #FFF;}
+			a:hover, a:focus {
+				color: #FFF;
+				.icon-footer{fill:#FFF;}
+			}
 		}
 
 		> span {
@@ -485,7 +488,7 @@ footer[id=footer] {
 		left: 0;
 		right: 0;
 		background-color: black;
-		width: 45%;
+		width: 65%;
 
 		div.content {
 			position: absolute;
@@ -529,7 +532,7 @@ footer[id=footer] {
 	section.text {
 		padding: $mediumvalue*3;
 		background-color:white;
-		margin-left: 45%;
+		margin-left: 65%;
 		position: relative;
 		font-size: 20px;
 		// @include transition(all 1s);
@@ -557,12 +560,8 @@ footer[id=footer] {
 	section[data-projet-page=Incentive] .item3 {background: transparent url('../images/projet/1/amb3.jpg')}
 	section[data-projet-page=Incentive] .item4 {background: transparent url('../images/projet/1/amb4.jpg')}
 	section[data-projet-page=Incentive] .item5 {background: transparent url('../images/projet/1/amb1.jpg')}
-
-	section[data-projet-page=Convention] .item1 {background: transparent url('../images/projet/3/amb5.jpg')}
-	section[data-projet-page=Convention] .item2 {background: transparent url('../images/projet/3/amb2.jpg')}
-	section[data-projet-page=Convention] .item3 {background: transparent url('../images/projet/3/amb3.jpg')}
-	section[data-projet-page=Convention] .item4 {background: transparent url('../images/projet/3/amb4.jpg')}
-	section[data-projet-page=Convention] .item5 {background: transparent url('../images/projet/3/amb1.jpg')}
+	section[data-projet-page=Incentive] .item4 {background: transparent url('../images/projet/1/amb6.jpg')}
+	section[data-projet-page=Incentive] .item5 {background: transparent url('../images/projet/1/amb7.jpg')}
 
 	section[data-projet-page=Corporate] .item1 {background: transparent url('../images/projet/2/amb5.jpg')}
 	section[data-projet-page=Corporate] .item2 {background: transparent url('../images/projet/2/amb2.jpg')}
@@ -570,11 +569,19 @@ footer[id=footer] {
 	section[data-projet-page=Corporate] .item4 {background: transparent url('../images/projet/2/amb4.jpg')}
 	section[data-projet-page=Corporate] .item5 {background: transparent url('../images/projet/2/amb1.jpg')}
 
-	section[data-projet-page=Studio] .item1 {background: transparent url('../images/projet/4/amb5.jpg')}
-	section[data-projet-page=Studio] .item2 {background: transparent url('../images/projet/4/amb2.jpg')}
-	section[data-projet-page=Studio] .item3 {background: transparent url('../images/projet/4/amb3.jpg')}
-	section[data-projet-page=Studio] .item4 {background: transparent url('../images/projet/4/amb4.jpg')}
-	section[data-projet-page=Studio] .item5 {background: transparent url('../images/projet/4/amb1.jpg')}
+	section[data-projet-page=Convention] .item1 {background: transparent url('../images/projet/3/amb5.jpg')}
+	section[data-projet-page=Convention] .item2 {background: transparent url('../images/projet/3/amb2.jpg')}
+	section[data-projet-page=Convention] .item3 {background: transparent url('../images/projet/3/amb3.jpg')}
+	section[data-projet-page=Convention] .item4 {background: transparent url('../images/projet/3/amb4.jpg')}
+	section[data-projet-page=Convention] .item5 {background: transparent url('../images/projet/3/amb1.jpg')}
+	section[data-projet-page=Convention] .item4 {background: transparent url('../images/projet/3/amb6.jpg')}
+	section[data-projet-page=Convention] .item5 {background: transparent url('../images/projet/3/amb7.jpg')}
+
+	section[data-projet-page=Animation] .item1 {background: transparent url('../images/projet/4/amb5.jpg')}
+	section[data-projet-page=Animation] .item2 {background: transparent url('../images/projet/4/amb2.jpg')}
+	section[data-projet-page=Animation] .item3 {background: transparent url('../images/projet/4/amb3.jpg')}
+	section[data-projet-page=Animation] .item4 {background: transparent url('../images/projet/4/amb4.jpg')}
+	section[data-projet-page=Animation] .item5 {background: transparent url('../images/projet/4/amb1.jpg')}
 
 }
 
@@ -648,6 +655,15 @@ footer[id=footer] {
 	top:$mediumvalue;
 	right:$mediumvalue;
 	font-size:14px;
+}
+
+.icon-footer {
+	fill: #999;
+	display: inline-table;
+	position: initial;
+	width: 20px;
+
+	svg {height: 16px;vertical-align: middle;}
 }
 
 /* ----------------------------- */

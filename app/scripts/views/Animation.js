@@ -4,10 +4,10 @@ App.Views = App.Views || {};
 
 (function () {
     'use strict';
-    App.Views.Studio = Backbone.View.extend({
+    App.Views.Animation = Backbone.View.extend({
 
         el: $('#projet-page'),
-	    name: 'Studio',
+	    name: 'Animation',
         initialize: function () {
             var e = this;
             $('section[data-projet-page="' + e.name + '"] a.OpenGalerie').on('click', _.bind(e.enterGalerieClick, e));
@@ -45,7 +45,7 @@ App.Views = App.Views || {};
             $('section[data-projet-page="' + this.name + '"] .text').css('display', 'block');
             $('section[data-projet-page="' + this.name + '"] .content .gallery-back').css('display', 'none');
             $('section[data-projet-page="' + this.name + '"] a.OpenGalerie').css('display', 'inline-block');
-            $('section[data-projet-page="' + this.name + '"] section.gallery').css('width', '45%');
+            $('section[data-projet-page="' + this.name + '"] section.gallery').css('width', '65%');
             $('section[data-projet-page="' + this.name + '"] .GalerieSlider').iosSlider('update');
         },
         enterGalleryFromRouter: function () {
