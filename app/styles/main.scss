@@ -1,20 +1,17 @@
-@import "knacss";
+@import "../bower_components/knacss/sass/knacss.scss";
 @import "../bower_components/bourbon/dist/_bourbon.scss";
 @import "icons/*.png";
 @import "icons-2x/*.png";
 @include all-icons-sprites;
 
+@include font-face(Aller, 'fonts/Aller_Rg');
+@include font-face(Aller, 'fonts/Aller_Bd', bold);
+@include font-face(Aller, 'fonts/Aller_Lt', 100);
+
 /* ----------------------------- */
 /* VARIABLE / GLOBALE
 /* ----------------------------- */
 
-$mediumvalue : 20px;
-
-@media (max-width: 360px) {
-	$mediumvalue : 10px;
-}
-
-$basebg : #FFF;
 $sprites: sprite-map("icons/*.png");
 $sprites2x: sprite-map("icons-2x/*.png");
 
@@ -25,9 +22,9 @@ a {
 a.button, div.button {
 	border: 1px #FFF solid;
 	background: transparent;
-	padding: $mediumvalue $mediumvalue*2;
-	font-size: 16px;
-	color: $basebg;
+	padding: $medium-value*0.75 $medium-value*2;
+	font-size: 13px;
+	color: $base-color-second;
 	text-decoration: none;
 	text-transform: uppercase;
 	@include transition (all 0.3s ease);
@@ -37,16 +34,14 @@ a.button, div.button {
 
 @media (max-width: 360px) {
 	a.button, div.button {
-		border: 1px #FFF solid;
-		background: transparent;
-		padding: $mediumvalue $mediumvalue*2;
+		display: block;
 	}
 }
 
 a.button:hover, div.button:hover, a.button:focus, div.button:focus {
-	border-color: $basebg;
-	background-color: $basebg;
-	color: black;
+	border-color: $base-color-second;
+	background-color: $base-color-second;
+	color: $base-color;
 	@include transition (all 0.3s ease);
 }
 
@@ -93,38 +88,11 @@ a.button:hover, div.button:hover, a.button:focus, div.button:focus {
 .prev {left: 0; cursor: w-resize !important;}
 .next {right: 0; cursor: e-resize !important;}
 
-.iosSliderButtons {
-	position: absolute;
-	bottom: 20px;
-	z-index:2;
-}
-
-.iosSliderButtons .button {
-	display: inline-block;
-	opacity: 0.25;
-	margin: 0 5px;
-	font-size:12px;
-}
-
-.iosSliderButtons .selected {
-	background-color: #FFF;
-	opacity: 1;
-	color:#000;
-}
-
 /* ----------------------------- */
 /* == #GLOBAL		             */
 /* ----------------------------- */
 
-div[id=global] {
-
-	text-align: center;
-	p {
-		font-weight: 100;
-	}
-}
-
-#skrollr-desktop {
+html.skrollr-desktop {
   height: 100%;
   position: relative;
   width: 100%;
@@ -138,17 +106,15 @@ header[id=header] {
 	background: url('../images/miami-beach-instantgrave.jpg') no-repeat center center fixed;
   	background-size: cover;
 	position: relative;
-	color: $basebg;
+	color: $base-color-second;
 
 	h1 {
-		font-size: 60px;
-		line-height: 65px;
-		width: 70%;
-		padding-bottom: $mediumvalue*4;
+		font-size: rem(96);
+		width: 80%;
 	}
 
 	a.arrow-bottom {
-		margin-top: $mediumvalue*3;
+		margin-top: $medium-value*3;
 		display: table;
 
 		img[class=arrow-bottom-img] {
@@ -174,29 +140,33 @@ header[id=header] {
   }
 }
 
+/* ----------------------------- */
+/* == NAVIGATION		         */
+/* ----------------------------- */
 
 nav[id=navigation] {
-	padding: $mediumvalue*2;
 	width: 100%;
-	text-align: left;
+	text-align: center;
 	background-color:#141414;
-	position: relative;
+	padding: em(20);
 
 	.logo {
-		text-align: center;
 		cursor: pointer;
 	}
 }
 
 section[id=vision] {
 	h1 {
-		font-size: 45px;
+		font-size: rem(64); 
 		text-transform: none;
-		line-height: 50px;
 	}
 
-	p {font-size: 22px}
+	p {font-size: rem(32)}
 }
+
+/* ----------------------------- */
+/* == events 			         */
+/* ----------------------------- */
 
 section[id=events] {
 
@@ -207,7 +177,7 @@ section[id=events] {
 		top: 0;
 		left: 0;
 		overflow: hidden;
-		background-color:black;
+		background-color:$base-color;
 		width: 100%;
 		height: auto;
 
@@ -217,26 +187,30 @@ section[id=events] {
 
 			.item {
 				float:left;
-				max-width: 1200px;
+				max-width: 1120px;
 				width: 100%;
 
 				.intro {
 					width: 100%;
 					height: 100%;
-					background-color: #000;
-					color: $basebg;
+					background-color: rgba(0,0,0,0.9);
+					color: $base-color-second;
 					z-index: 1;
-					opacity: 0.8;
 					position: absolute;
 
-					p {margin-bottom: 10%;}
+					h1 {
+						font-size:rem(80); // 80px = 5rem
+						margin: 0;
+					}
+					p { margin: 0}
+					a.button {margin-top: $medium-value;}
 				}
 
 				img {
 					position: relative;
 					top: 0;
 					left: 0;
-					max-width: 1200px;
+					max-width: 1120px;
 					width: 100%;
 					margin: 0 auto;
 					height: auto;
@@ -244,12 +218,33 @@ section[id=events] {
 			}
 		}
 	}
+
+	.iosSliderButtons {
+		position: absolute;
+		bottom: $medium-value;
+		z-index:2;
+	}
+
+	.iosSliderButtons .button {
+		display: inline-block;
+		opacity: 0.5;
+		margin: 0 $tiny-value;
+		font-size:rem(16); // 
+	}
+
+	.iosSliderButtons .selected {
+		background-color: #FFF;
+		opacity: 1;
+		color:$base-color;
+	}
 }
 
+/* ----------------------------- */
+/* == SERVICES 			         */
+/* ----------------------------- */
+
 section[id=services] {
-	h1 {
-		margin-bottom: 2em;
-	}
+
 	.grid > * {margin-left:0;}
 	div.zone {
 
@@ -257,16 +252,14 @@ section[id=services] {
 		display: inline-block;
 		vertical-align: top;
 		text-align: left;
-		padding-left: 7%;
-		padding-right: 3%;
-		margin-bottom: 5%;
+		padding-left: 60px;
+		padding-right: 2%;
+		margin-bottom: 40px;
 
-		h3 {
+		h5 {
 			font-weight: 100;
-			font-size: 18px;
 			text-transform: none;
-			margin-top: 0;
-			line-height:2;
+			margin-bottom: 0;
 		}
 	}
 	div.zone:before {
@@ -308,27 +301,28 @@ section[id=services] {
 	}
 }
 
-section[id=services].pa3 { padding:100px 40px;}
+/* ----------------------------- */
+/* == CONTACT 			         */
+/* ----------------------------- */
 
 section[id=contact] {
 	text-align: center;
 	background: url('../images/soiree-instant-grave.jpg') no-repeat center center fixed;
   	background-size: cover;
-	color: $basebg;
-
-	a[class=button] {margin-top: $mediumvalue*2; display: inline-block}
+	color: $base-color-second;
 
 	a[class=button]:hover, a[class=button]:focus {color: #2c3e50;}
 }
 
+/* ----------------------------- */
+/* == CLIENTS 			         */
+/* ----------------------------- */
+
 section[id=clients] {
 
-	h1 {
-		margin-bottom: 2em;
-	}
-	background-color: $basebg;
+	background-color: $base-color-second;
 
-	div {display: inline-block; vertical-align: middle; margin: 0px 20px;}
+	div {display: inline-block; vertical-align: middle; margin: $small-value;}
 
 	div.icons-etam {
 		@include sprite-background(etam);
@@ -347,7 +341,9 @@ section[id=clients] {
 	}
 }
 
-section[id=clients].pa3 {padding: 40px;}
+/* ----------------------------- */
+/* == NEWSLETTER 		         */
+/* ----------------------------- */
 
 section[id=newsletter] {
 	text-align: center;
@@ -357,8 +353,8 @@ section[id=newsletter] {
 		font-size: 18px;
 		font-weight: 100;
 		display: block;
-		color: $basebg;
-		margin-bottom: 2em;
+		color: $base-color-second;
+		margin-bottom: $medium-value;
 		cursor: text;
 	}
 
@@ -370,14 +366,14 @@ section[id=newsletter] {
 
 	input[type=email] {
 		width: 350px;
-		padding: $mediumvalue/2 $mediumvalue;		
+		padding: $medium-value/2 $medium-value;		
 	}
 
 	button {
 		width: 150px;
 		text-transform: uppercase;
 		background: transparent;
-		color: $basebg;
+		color: $base-color-second;
 		@include transition (all 0.3s ease);
 	}
 
@@ -388,11 +384,14 @@ section[id=newsletter] {
 	}
 }
 
+/* ----------------------------- */
+/* == FOOTER 			         */
+/* ----------------------------- */
+
 footer[id=footer] {
 	background-color:#141414;
-	width: 100%;
 	color: white;
-	padding-bottom: $mediumvalue;
+	padding-bottom: $small-value;
 	position: relative;
 	.button-link { cursor: pointer;}
 
@@ -401,20 +400,20 @@ footer[id=footer] {
 		color: #999;
 	}
 
-	.data {
-		margin-top: $mediumvalue*2;
+	.data, #meta {
+		margin-top: $small-value*3;
 	}
 
 	#meta {
-		margin-top: $mediumvalue*3;
 		border-top: 1px solid #333;
-		padding-top: 36px;
+		padding-top: $small-value*3;
 		font-family: Arial,sans-serif;
 		font-size: 11px;
 		height: 64px;
 
 		> div {
 			float: right;
+			width: 80%;
 
 			a {
 				float: right;
@@ -434,30 +433,10 @@ footer[id=footer] {
 			color: #999;
 			text-align: left;
 			float: left;
+			width: 20%;
 		}
 	}
 	
-}
-
-.animateProjet {
-	width: 100%;
-	height: 100%;
-	background-color: #FFF;
-	display: none;
-	position: absolute;
-	z-index: 999;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	margin-left: 0;
-	@include transition (all 1s);
-	overflow:hidden;
-}
-
-.animateProjet.open {
-	margin-left: 100%;
-	overflow:hidden;
 }
 
 /* ----------------------------- */
@@ -487,13 +466,13 @@ footer[id=footer] {
 		bottom: 0;
 		left: 0;
 		right: 0;
-		background-color: black;
+		background-color: $base-color;
 		width: 65%;
 
 		div.content {
 			position: absolute;
 			z-index: 9;
-			padding-left: $mediumvalue*2;
+			padding-left: $medium-value;
 			width: 100%;
 
 			.gallery-back {
@@ -502,7 +481,13 @@ footer[id=footer] {
 				fill: #FFF !important;
 			}
 
-			h1 {color:#FFF;line-height:1.2em; font-size:4.5em;margin: 0;margin-bottom:$mediumvalue;}
+			h1 {
+				color: #FFF;
+				font-size: 6rem;
+				width: 80%;
+				margin: 0;
+				margin-bottom: $small-value;
+			}
 
 		}
 		.GalerieSlider {
@@ -530,28 +515,26 @@ footer[id=footer] {
 	}
 
 	section.text {
-		padding: $mediumvalue*3;
+		padding: $medium-value;
 		background-color:white;
 		margin-left: 65%;
 		position: relative;
-		font-size: 20px;
-		// @include transition(all 1s);
 
 		h2 {
-			font-size: 45px;
-			line-height: 52px;
+			font-size: 4.5rem;
 			display: inline-block;
-			margin-bottom:$mediumvalue*2;
 			margin-top: 0;
 		}
 
+		p {font-size:1.6rem;}
+
 		nav {
 			position: absolute;
-			bottom:$mediumvalue*2;
-			right: $mediumvalue*2;
-			div.button {border: 1px #000 solid;}
-			div {text-decoration: none; color:#000; font-size:11px;}
-			div:hover, div:focus {color:#FFF; background-color:#000;}
+			bottom:$small-value;
+			right: $small-value;
+			div.button {border: 1px $base-color solid;}
+			div {text-decoration: none; color:$base-color; font-size:1.1rem;}
+			div:hover, div:focus {color:#FFF; background-color:$base-color;}
 		}
 	}
 
@@ -652,9 +635,9 @@ footer[id=footer] {
 }
 
 .icon-close {
-	top:$mediumvalue;
-	right:$mediumvalue;
-	font-size:14px;
+	top:$small-value;
+	right:$small-value;
+	font-size:1.4rem;
 }
 
 .icon-footer {
@@ -663,48 +646,27 @@ footer[id=footer] {
 	position: initial;
 	width: 20px;
 
-	svg {height: 16px;vertical-align: middle;}
+	svg {height: 1.6rem;vertical-align: middle;}
 }
 
 /* ----------------------------- */
 /* == RESPONSIVE	             */
 /* ----------------------------- */
 
-@include mq(small) {
+@media (max-width: $medium-screen) {
 
 	body { overflow-y:auto !important;}
-
-	.pa4, .pa3 {padding: $mediumvalue*3};
-
-	nav[id=navigation] {
-		.grid3 > * {width: 33.333% !important;}
-	}
 		
-
 	header[id=header] {
-		h1 {font-size:60px;width: 100%;}
-		h2 {font-size:25px;width: 100%;}
-	}
-
-	section[id=vision] {
-		h1 {font-size: 30px; line-height:40px}
-		p {font-size: 18px;}
-	}
-
-	section[id=services] {
-		div.zone {
-			padding-left: 9%;
-			padding-right: 5%;
-			margin-bottom: 5%;
+		h1 {
+			font-size:rem(80);
+			width: 100%;
 		}
 	}
 
-	section[id=clients] {
-		div {margin: 0 $mediumvalue;}
-	}
-
-	section[id=newsletter] {
-		label {font-size: 16px}
+	section[id=vision] {
+		h1 {font-size: 3rem;}
+		p {font-size: 1.8rem;}
 	}
 
 	#projet-page {
@@ -712,18 +674,13 @@ footer[id=footer] {
 		section.gallery {
 			position: relative;
 			width: 100% !important;
-
-			div.content {
-				top:$mediumvalue*2;
-				top: initial;
-			}
 		}
 
 		section.gallery.nofullscreen {
 			height: 600px !important;
 
 			div.content {
-				bottom:$mediumvalue*2 !important;
+				bottom:$medium-value !important;
 
 				h1{width: 90%;} 
 			}
@@ -731,64 +688,63 @@ footer[id=footer] {
 
 		section[class=text] {
 			margin-left: 0;
-			padding: $mediumvalue*2 $mediumvalue*2;
 			width: 100%;
 			display: block;
 
-			h2 {margin-bottom: $mediumvalue;}
+			h2 {margin-bottom: 2rem;}
 
 			nav {
 				position: relative;
-				margin-top:$mediumvalue*2;
+				margin-top:$medium-value;
 				right:0;
 				bottom:0;
 				width: 100%;
 				div.before, div.after { display:inline-block; width:49%;}
-				div.button {text-align: center;margin-bottom: $mediumvalue*2;font-size: 14px;}
+				div.button {text-align: center;margin-bottom: $medium-value;font-size: 1.4rem;}
 			}
 		}
 	}
-
-
 }
 
-@include mq(tiny) {
 
-	.pa4, .pa3 {padding: $mediumvalue*2};
 
-	section[id=services].pa3 {padding: $mediumvalue*2};
+@media (max-width: 600px) {
 
-	section[id=services] div.zone.icon-visuel:before, section[id=services] div.zone.icon-challenge:before, 
-	section[id=services] div.zone.icon-event:before, section[id=services] div.zone.icon-conv:before, 
-	section[id=services] div.zone.icon-stand:before, section[id=services] div.zone.icon-light:before { width:35px;}
+	.grid3 > * {
+		width: 50%;
+	}
 
-	section[id=services] {
-		h1 {margin-bottom: 1em;}
-		div.zone {padding-left: 50px;padding-right: 0%;}
+	header[id=header] h1 {
+		font-size: 4rem;
 	}
 
 	section[id=events] {
 		.iosSliderButtons {display:none !important;}
 	}
 
-	section[id=vision] {
-		h1 {font-size: 26px; line-height:30px}
-		p {font-size: 14px;}
+	section[id=services] div.zone.icon-visuel:before, section[id=services] div.zone.icon-challenge:before, 
+	section[id=services] div.zone.icon-event:before, section[id=services] div.zone.icon-conv:before, 
+	section[id=services] div.zone.icon-stand:before, section[id=services] div.zone.icon-light:before { width:35px;}
+
+	section[id=services] {
+		div.zone {padding-left: 50px;padding-right: 0;}
 	}
 
-	section[id=clients] {
-		div {margin: $mediumvalue/2 $mediumvalue}
+	section[id=vision] {
+		h1 {font-size: 2.6rem;}
+		p {font-size: 1.4rem;}
 	}
 
 	section[id=newsletter] {
-		label {font-size: 15px}
+		label {font-size: 1.6rem}
 
 		input[type=email], button {
 			width: 100%;
+			display: block;
 		}
 
 		button {
-			margin-top: $mediumvalue/2
+			margin-top: $medium-value;
 		}
 	}
 
@@ -807,28 +763,33 @@ footer[id=footer] {
 
 }
 
-@media (max-width: 480px) {
 
-	nav[id=navigation] .grid3 > * {width:100% !important;}
+@media (max-width: $small-screen) {
 
-	h1 { font-size: 2.5em;}
+	h1 { font-size: 2em;}
 
 	header[id=header] {
-		h1 {font-size: 37px;line-height: 47px;}
+		h1 {font-size: 37px;}
 		h2 {font-size: 20px;padding: 2% 0 15% 0;}
 		a.arrow-bottom {margin-top: 45px;}
 	}
 
-	.lang { display: none}
+	section[id=events] .eventSlider .slider .item .intro h1 {
+		font-size:rem(48);
+	}
 
-
-	section[id=vision] h1 {font-size: 23px;}
 	section[id=clients] {
 		div {
-			margin: 10px 0px;
+			margin: 2rem 0px;
 			display: block;
 			margin-left: auto;
 			margin-right: auto;
+		}
+	}
+
+	#meta {
+		> div, > span {
+			width: 50%;
 		}
 	}
 
@@ -845,29 +806,68 @@ footer[id=footer] {
 		}
 	}
 
+	#projet-page section[class=text] nav div.before, #projet-page section[class=text] nav div.after {
+		display: block;
+		width: 100%;
+	}
+
 }
 
-@media (max-width: 360px) {
-	header[id=header] {
-		h1 {font-size: 25px;line-height: 30px;padding-bottom: 45px;}
-		h2 {display:none;}
-	}	
+@media (max-width: $tiny-screen) {
 
-	footer[id=footer] {.logo { display: none} .back {position: relative; text-align: center; right:0; top:0;}}
+	h1 { font-size: 2rem;}
+	p { font-size:1.2rem;}
+
+	header[id=header] {
+		padding: 1rem;
+		h1 {font-size: 2.4rem;}
+		h2 {display:none;}
+	}
+
+	section[id=vision] h1 {
+		font-size: 1.7rem;
+		p {font-size: 1.3rem;}
+	}
+
+	section[id=events] {
+		p {display:none;}
+
+		.eventSlider .slider .item .intro h1 {font-size: 2rem;}
+	}
+
+	section[id=newsletter] label {
+		font-size: 1.4rem;
+	}
 
 	#projet-page {
 
 		section.gallery {
+			div.content {
+				h1 {
+					font-size: 2.5em !important
+				}
+			}
+		}
+
+		section.gallery.nofullscreen {
 			height: 250px !important;
+
+			div.content {
+				h1 {
+					width:100%;
+					margin-bottom:0.5em;
+				}
+				padding-left: $small-value;
+			}
 		}
 		section.text {
 			margin-left: 0;
-			padding: $mediumvalue;
+			padding: $small-value;
 			width: 100%;
 			display: block;
-			font-size: 18px;
+			font-size: 1.8rem;
 
-			h2 {font-size: 35px;margin-bottom: 0;} 
+			h2 {font-size: 3.5rem;margin-bottom: 0;} 
 		}
 	}
 }
