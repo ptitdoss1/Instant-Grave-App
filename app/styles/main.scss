@@ -484,7 +484,6 @@ footer[id=footer] {
 			h1 {
 				color: #FFF;
 				font-size: 6rem;
-				width: 80%;
 				margin: 0;
 				margin-bottom: $small-value;
 			}
@@ -538,33 +537,34 @@ footer[id=footer] {
 		}
 	}
 
-	section[data-projet-page=Incentive] .item1 {background: transparent url('../images/projet/1/amb5.jpg')}
+	section[data-projet-page=Incentive] .item1 {background: transparent url('../images/projet/1/amb1.jpg')}
 	section[data-projet-page=Incentive] .item2 {background: transparent url('../images/projet/1/amb2.jpg')}
 	section[data-projet-page=Incentive] .item3 {background: transparent url('../images/projet/1/amb3.jpg')}
 	section[data-projet-page=Incentive] .item4 {background: transparent url('../images/projet/1/amb4.jpg')}
-	section[data-projet-page=Incentive] .item5 {background: transparent url('../images/projet/1/amb1.jpg')}
+	section[data-projet-page=Incentive] .item5 {background: transparent url('../images/projet/1/amb5.jpg')}
 	section[data-projet-page=Incentive] .item4 {background: transparent url('../images/projet/1/amb6.jpg')}
 	section[data-projet-page=Incentive] .item5 {background: transparent url('../images/projet/1/amb7.jpg')}
+	section[data-projet-page=Incentive] .item5 {background: transparent url('../images/projet/1/amb8.jpg')}
 
-	section[data-projet-page=Corporate] .item1 {background: transparent url('../images/projet/2/amb5.jpg')}
+	section[data-projet-page=Corporate] .item1 {background: transparent url('../images/projet/2/amb1.jpg')}
 	section[data-projet-page=Corporate] .item2 {background: transparent url('../images/projet/2/amb2.jpg')}
 	section[data-projet-page=Corporate] .item3 {background: transparent url('../images/projet/2/amb3.jpg')}
 	section[data-projet-page=Corporate] .item4 {background: transparent url('../images/projet/2/amb4.jpg')}
-	section[data-projet-page=Corporate] .item5 {background: transparent url('../images/projet/2/amb1.jpg')}
+	section[data-projet-page=Corporate] .item5 {background: transparent url('../images/projet/2/amb5.jpg')}
 
-	section[data-projet-page=Convention] .item1 {background: transparent url('../images/projet/3/amb5.jpg')}
+	section[data-projet-page=Convention] .item1 {background: transparent url('../images/projet/3/amb1.jpg')}
 	section[data-projet-page=Convention] .item2 {background: transparent url('../images/projet/3/amb2.jpg')}
 	section[data-projet-page=Convention] .item3 {background: transparent url('../images/projet/3/amb3.jpg')}
 	section[data-projet-page=Convention] .item4 {background: transparent url('../images/projet/3/amb4.jpg')}
-	section[data-projet-page=Convention] .item5 {background: transparent url('../images/projet/3/amb1.jpg')}
+	section[data-projet-page=Convention] .item5 {background: transparent url('../images/projet/3/amb5.jpg')}
 	section[data-projet-page=Convention] .item4 {background: transparent url('../images/projet/3/amb6.jpg')}
 	section[data-projet-page=Convention] .item5 {background: transparent url('../images/projet/3/amb7.jpg')}
 
-	section[data-projet-page=Animation] .item1 {background: transparent url('../images/projet/4/amb5.jpg')}
+	section[data-projet-page=Animation] .item1 {background: transparent url('../images/projet/4/amb1.jpg')}
 	section[data-projet-page=Animation] .item2 {background: transparent url('../images/projet/4/amb2.jpg')}
 	section[data-projet-page=Animation] .item3 {background: transparent url('../images/projet/4/amb3.jpg')}
 	section[data-projet-page=Animation] .item4 {background: transparent url('../images/projet/4/amb4.jpg')}
-	section[data-projet-page=Animation] .item5 {background: transparent url('../images/projet/4/amb1.jpg')}
+	section[data-projet-page=Animation] .item5 {background: transparent url('../images/projet/4/amb5.jpg')}
 
 }
 
@@ -819,7 +819,7 @@ footer[id=footer] {
 	p { font-size:1.2rem;}
 
 	header[id=header] {
-		padding: 1rem;
+		padding: 0 1rem;
 		h1 {font-size: 2.4rem;}
 		h2 {display:none;}
 	}
@@ -828,6 +828,8 @@ footer[id=footer] {
 		font-size: 1.7rem;
 		p {font-size: 1.3rem;}
 	}
+
+	section[id=contact] p {display:none;}
 
 	section[id=events] {
 		p {display:none;}
