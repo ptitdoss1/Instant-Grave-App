@@ -44,6 +44,9 @@ App.Views = App.Views || {};
                     forceHeight: false
                 });
             }
+            else {
+                $('header[id="header"]').css('background-attachment', 'scroll');
+            }
 	    },
         enterProjectEvent: function (e) {
             switch (e) {

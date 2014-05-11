@@ -64,7 +64,8 @@ App.Views = App.Views || {};
             $('.eventSlider').iosSlider('update');
             $('.eventSlider').iosSlider('goToSlide', 1);
             $('section[data-projet-page="' + this.name + '"]').css('display', 'none');
-            $('body').css('overflow', 'auto');
+            $('body').css('overflow-y', 'auto');
+            $('body').css('overflow-x', 'hidden');
             Backbone.history.navigate('events');
         },
         leaveGallery: function () {

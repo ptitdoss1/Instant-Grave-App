@@ -98,6 +98,11 @@ html.skrollr-desktop {
   width: 100%;
 }
 
+body {
+	overflow-x:hidden;
+	overflow-y:auto;
+}
+
 /* ----------------------------- */
 /* == HEADER		             */
 /* ----------------------------- */
@@ -113,19 +118,19 @@ header[id=header] {
 		width: 80%;
 	}
 
+	a[data-id=events] {display: inline-block;}
+
 	a.arrow-bottom {
 		margin-top: $medium-value*3;
 		display: table;
 
-		img[class=arrow-bottom-img] {
-			width: 50px;
-			position: relative;
+		div.icon-arrow svg {
 			@include animation(translate 0.75s ease-in-out infinite);
 		}
 	}
 
 	a.arrow-bottom:hover, a.arrow-bottom:focus {
-		img[class=arrow-bottom-img] {
+		div.icon-arrow svg {
 			@include animation-play-state(paused);
 		}
 	}
@@ -149,10 +154,6 @@ nav[id=navigation] {
 	text-align: center;
 	background-color:#141414;
 	padding: em(20);
-
-	.logo {
-		cursor: pointer;
-	}
 }
 
 section[id=vision] {
@@ -193,7 +194,7 @@ section[id=events] {
 				.intro {
 					width: 100%;
 					height: 100%;
-					background-color: rgba(0,0,0,0.9);
+					background-color: rgba(0,0,0,0.8);
 					color: $base-color-second;
 					z-index: 1;
 					position: absolute;
@@ -519,8 +520,9 @@ footer[id=footer] {
 		margin-left: 65%;
 		position: relative;
 
-		h2 {
-			font-size: 4.5rem;
+		.title-projet {
+			font-size: 4rem;
+			font-weight: bold;
 			display: inline-block;
 			margin-top: 0;
 		}
@@ -542,9 +544,9 @@ footer[id=footer] {
 	section[data-projet-page=Incentive] .item3 {background: transparent url('../images/projet/1/amb3.jpg')}
 	section[data-projet-page=Incentive] .item4 {background: transparent url('../images/projet/1/amb4.jpg')}
 	section[data-projet-page=Incentive] .item5 {background: transparent url('../images/projet/1/amb5.jpg')}
-	section[data-projet-page=Incentive] .item4 {background: transparent url('../images/projet/1/amb6.jpg')}
-	section[data-projet-page=Incentive] .item5 {background: transparent url('../images/projet/1/amb7.jpg')}
-	section[data-projet-page=Incentive] .item5 {background: transparent url('../images/projet/1/amb8.jpg')}
+	section[data-projet-page=Incentive] .item6 {background: transparent url('../images/projet/1/amb6.jpg')}
+	section[data-projet-page=Incentive] .item7 {background: transparent url('../images/projet/1/amb7.jpg')}
+	section[data-projet-page=Incentive] .item8 {background: transparent url('../images/projet/1/amb8.jpg')}
 
 	section[data-projet-page=Corporate] .item1 {background: transparent url('../images/projet/2/amb1.jpg')}
 	section[data-projet-page=Corporate] .item2 {background: transparent url('../images/projet/2/amb2.jpg')}
@@ -557,14 +559,14 @@ footer[id=footer] {
 	section[data-projet-page=Convention] .item3 {background: transparent url('../images/projet/3/amb3.jpg')}
 	section[data-projet-page=Convention] .item4 {background: transparent url('../images/projet/3/amb4.jpg')}
 	section[data-projet-page=Convention] .item5 {background: transparent url('../images/projet/3/amb5.jpg')}
-	section[data-projet-page=Convention] .item4 {background: transparent url('../images/projet/3/amb6.jpg')}
-	section[data-projet-page=Convention] .item5 {background: transparent url('../images/projet/3/amb7.jpg')}
+	section[data-projet-page=Convention] .item6 {background: transparent url('../images/projet/3/amb6.jpg')}
 
 	section[data-projet-page=Animation] .item1 {background: transparent url('../images/projet/4/amb1.jpg')}
 	section[data-projet-page=Animation] .item2 {background: transparent url('../images/projet/4/amb2.jpg')}
 	section[data-projet-page=Animation] .item3 {background: transparent url('../images/projet/4/amb3.jpg')}
 	section[data-projet-page=Animation] .item4 {background: transparent url('../images/projet/4/amb4.jpg')}
 	section[data-projet-page=Animation] .item5 {background: transparent url('../images/projet/4/amb5.jpg')}
+	section[data-projet-page=Animation] .item6 {background: transparent url('../images/projet/4/amb6.jpg')}
 
 }
 
@@ -586,11 +588,15 @@ footer[id=footer] {
 	text-align:center;
 	color:white;
 
-	 div > img {
-	 	margin-top: 25%; 
-	 }
+	> div.loader-center {
+		position: absolute;
+		top:25%;
+		margin: 0 auto;
+		left:0;
+		right: 0;
+	}
 
-	 p { font-size:12px}
+	p { font-size:12px}
 }
 
 .pace {
@@ -649,13 +655,25 @@ footer[id=footer] {
 	svg {height: 1.6rem;vertical-align: middle;}
 }
 
+.icon-arrow {
+	position: relative;
+	svg {
+		width: 50px;
+		fill:#FFF;
+	}
+}
+
+.icon-logo {
+	position: relative;
+	width: 230px;
+	margin: 0 auto;
+} 
+
 /* ----------------------------- */
 /* == RESPONSIVE	             */
 /* ----------------------------- */
 
 @media (max-width: $medium-screen) {
-
-	body { overflow-y:auto !important;}
 		
 	header[id=header] {
 		h1 {
@@ -691,7 +709,7 @@ footer[id=footer] {
 			width: 100%;
 			display: block;
 
-			h2 {margin-bottom: 2rem;}
+			.description {margin-bottom: 2rem;}
 
 			nav {
 				position: relative;
@@ -706,7 +724,11 @@ footer[id=footer] {
 	}
 }
 
-
+@media (max-width: 768px) and (min-width: 600px) {
+	section[id=events] .iosSliderButtons {
+		display: none !important;
+	}
+}
 
 @media (max-width: 600px) {
 
@@ -720,6 +742,10 @@ footer[id=footer] {
 
 	section[id=events] {
 		.iosSliderButtons {display:none !important;}
+
+		.intro {
+			background-color: rgba(0,0,0,0.5) !important;
+		}
 	}
 
 	section[id=services] div.zone.icon-visuel:before, section[id=services] div.zone.icon-challenge:before, 
@@ -763,14 +789,13 @@ footer[id=footer] {
 
 }
 
-
 @media (max-width: $small-screen) {
 
 	h1 { font-size: 2em;}
 
 	header[id=header] {
 		h1 {font-size: 37px;}
-		h2 {font-size: 20px;padding: 2% 0 15% 0;}
+		.description {font-size: 20px;padding: 2% 0 15% 0;}
 		a.arrow-bottom {margin-top: 45px;}
 	}
 
@@ -821,7 +846,9 @@ footer[id=footer] {
 	header[id=header] {
 		padding: 0 1rem;
 		h1 {font-size: 2.4rem;}
-		h2 {display:none;}
+		.description {display:none;}
+
+		a[data-id=events] {display:none;}
 	}
 
 	section[id=vision] h1 {
@@ -869,7 +896,7 @@ footer[id=footer] {
 			display: block;
 			font-size: 1.8rem;
 
-			h2 {font-size: 3.5rem;margin-bottom: 0;} 
+			.description {font-size: 3.5rem;margin-bottom: 0;} 
 		}
 	}
 }
