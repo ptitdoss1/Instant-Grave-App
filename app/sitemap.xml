@@ -1,0 +1,50 @@
+
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="//www.carnet-ecommerce.com/main-sitemap.xsl"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+<url>
+	<loc>http://www.instant-grave.fr/</loc>
+	<priority>1</priority>
+	<image:image>
+		<image:loc>http://www.instant-grave.fr/images/miami-beach-instantgrave.jpg</image:loc>
+		<image:caption>Miami Beach Instant Gravé</image:caption>
+	</image:image>
+	<image:image>
+		<image:loc>http://www.instant-grave.fr/images/soiree-instant-grave.jpg</image:loc>
+		<image:caption>Soirée Dôme Instant Gravé</image:caption>
+	</image:image>
+</url>
+
+<url>
+<loc>http://www.instant-grave.fr/#!/case-projet/Incentive</loc>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>http://www.instant-grave.fr/#!/case-projet/Corporate</loc>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>http://www.instant-grave.fr/#!/case-projet/Convention</loc>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>http://www.instant-grave.fr/#!/case-projet/Animation</loc>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>http://www.instant-grave.fr/#!/case-projet/Incentive/Galerie</loc>
+<priority>0.5</priority>
+</url>
+<url>
+<loc>http://www.instant-grave.fr/#!/case-projet/Corporate/Galerie</loc>
+<priority>0.5</priority>
+</url>
+<url>
+<loc>http://www.instant-grave.fr/#!/case-projet/Convention/Galerie</loc>
+<priority>0.5</priority>
+</url>
+<url>
+<loc>http://www.instant-grave.fr/#!/case-projet/Animation/Galerie</loc>
+<priority>0.5</priority>
+</url>
+</urlset>
