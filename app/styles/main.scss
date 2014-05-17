@@ -669,11 +669,12 @@ footer[id=footer] {
 	margin: 0 auto;
 } 
 
-.icon-left, .icon-right {top:45%;opacity: .5;}
-.icon-right {margin-right:$medium-value;}
+.icon-left, .icon-right {top:45%;opacity: .5; height:50px; width:50px;@include transition (all 0.3s ease);}
+.icon-right { right:0}
+.icon-left { left:0}
 .icon-right svg {@include transform(rotate(180deg));} 
 .icon-left:hover, .icon-left:active, .icon-left:focus,
-.icon-right:hover, .icon-right:active, .icon-right:focus {opacity: 1;}
+.icon-right:hover, .icon-right:active, .icon-right:focus {opacity: 1;@include transition (all 0.3s ease);}
 
 /* ----------------------------- */
 /* == RESPONSIVE	             */

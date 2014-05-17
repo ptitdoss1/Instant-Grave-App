@@ -75,7 +75,7 @@ window.App = {
             $(e).iosSlider({
                 snapToChildren: true,
                 desktopClickDrag: true,
-                infiniteSlider: false,
+                infiniteSlider: true,
                 snapSlideCenter: true,
                 keyboardControls: true,
                 onSliderUpdate: sliderLoadedGallery,
