@@ -124,13 +124,13 @@ header[id=header] {
 		margin-top: $medium-value*3;
 		display: table;
 
-		div.icon-arrow svg {
+		span.icon-arrow svg {
 			@include animation(translate 0.75s ease-in-out infinite);
 		}
 	}
 
 	a.arrow-bottom:hover, a.arrow-bottom:focus {
-		div.icon-arrow svg {
+		span.icon-arrow svg {
 			@include animation-play-state(paused);
 		}
 	}

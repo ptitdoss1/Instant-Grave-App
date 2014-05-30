@@ -105,4 +105,5 @@ $(document).ready(function () {
 
     App.iosSlider('.eventSlider');
     App.iosSlider('.GalerieSlider');
+    $("img").lazyload();
 });
